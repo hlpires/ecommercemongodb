@@ -12,7 +12,7 @@ const Login = () => {
             <form action ='/api/register' method = 'POST'>  
                 <input placeholder = 'Login' type= 'email' name = 'email'></input>
                 <input placeholder = 'Senha' type= 'password' name = 'password'></input>
-                {/*<input placeholder = 'CPF'></input>*/}
+                {/*<input placeholder = 'CPF'></inputaaa>*/}
                 <button type ='submit' value = 'Register'></button>
             </form>
         </div>
