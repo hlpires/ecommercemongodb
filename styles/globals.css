@@ -1,26 +1,50 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
+:root{
+  --text-primary:#000;
+  --bgPrimary:#fff;
+ --bgSecondary: #F9F9F9;
+ --pink: #0071bd;
+ --light-blue: #e6f7ff;
+ --border: #d9d9d9;
 }
 
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+.login{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content:center;
+  border: 2px solid blue;
+ 
+}
+.position{
+  width: 1500px;
+  background-color: yellow;
+  display: flex;
+  justify-content: center;
+}
+.loginBox{
+  align-self: center;
+  height: 60%;
+  width: 30%;
+  background-color: red;
+}
+input{
+  margin-top: 10%;
+  margin-left: 5%;
+  width: 90%;
+  height: 30px;
+  
+ 
+}
+button{
+  margin-top: 10%;
+  margin-left: 6.5%;
+  width: 40%;
+  height: 30px;
+  cursor: pointer;
 }
