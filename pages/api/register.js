@@ -3,9 +3,7 @@ import User from '../../model/schema'
 
 
 connect()
-if(connect.isConnected){
-console.log('conecção funcionou')
-}
+
 
 export default async function handler(req,res){
     try{
