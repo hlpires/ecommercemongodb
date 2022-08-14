@@ -13,10 +13,24 @@ const Login = () => {
   }
   return (
     <>
+      <div className = 'login'>
+      <div className = 'position'>
+        <div className = 'loginBox'>
+            <form action ='/api/register' method = 'POST'>  
+                <input placeholder = 'Login' type= 'email' name = 'email'></input>
+                <input placeholder = 'Senha' type= 'password' name = 'password'></input>
+                {/*<input placeholder = 'CPF'></inputaaa>*/}
+                <button type ='submit' value = 'Register'></button>
+            </form>
+        </div>
+      </div>
+    </div>
       Not signed in <br />
       <button onClick={() => signIn()}>Sign in</button>
     </>
   )
+
+ 
 }
 
 export default Login
