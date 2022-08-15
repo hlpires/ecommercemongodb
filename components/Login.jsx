@@ -33,18 +33,23 @@ const pegarJob = async () => {
 
 
 
-{/*   useEffect((res) => {
+  useEffect(() => {
 
   const response = fetch('/api/pegarproduto',{
     
     method: 'GET',
     headers: {'Content-Type': 'application/json'},
-  });
-  
-  const data = response
-  console.log(res)
+  })
 
-}, []); */}
+  .then(res =>{
+    return res.json();
+  })
+  .then(data =>{
+   console.log(data)
+  })
+
+
+}, []); 
 
 
   const [username, usernameInput] = useInput({ placeholder: 'jdoe123' });
