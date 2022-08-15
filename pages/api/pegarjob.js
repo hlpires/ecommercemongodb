@@ -1,19 +1,25 @@
 import connect from '../../lib/mongodb'
 import userJobSchema  from '../../model/jobSchema'
 
- connect()
+connect()
 
-const job = new userJobSchema ({
-name:'inefas',
-email:'Bolsonaro',
-job:{
-    elo:'prata',
-    duo:false,
-    discord:false,
-    elofinal:'bronze'
+export default async function handler(req,res) {    
+const productobj = (req.body)
+
+
+    try {  
+    
+    const produto = new userJobSchema (
+    productobj
+    
+    )
+    
+    produto.save().then(() =>{console.log('produto criado')})
+    } catch (error) {
+        console.log('erro')
+    }
+
+
 }
- })
- job.save().then(() =>{console.log('job criado')})
-
 
 

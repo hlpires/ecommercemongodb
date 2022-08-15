@@ -1,14 +1,11 @@
 const mongoose = require("mongoose")
 
-const userJobSchema = new mongoose.Schema({
+const produtoSchema = new mongoose.Schema({
     name:String,
-    email:String,
-    job:{
-        elo:String,   
-        duo:Boolean,    
-        discord:Boolean,   
-        elofinal:String
-    }
+    preço:String,
+    imageurl:String,
+    quantidadeDisp:String,
+    descritivo:String
 })
   
-module.exports = mongoose.model('usuariosJobs',userJobSchema)
+module.exports = mongoose.model('produto',produtoSchema)

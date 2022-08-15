@@ -7,22 +7,13 @@ const Login = () => {
 
 
   const jobs = {
-    elo:'prata',
-    duo:false,
-    discord:false,
-    elofinal:'bronze'
+    name:'celular',
+    preço:'1200',
+    imageurl:'dasodkoasdfkoasdkoasdkoa',
+    quantidadeDisp:'22',
+    descritivo:'ASKOAKOSKOASKOASOKASKOASKOASKOAKOSo'
   }
 
- useEffect(() => {
-  fetch('/api/register',{
-    
-    method: 'POST',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify(''),
-    
-  });
-   
-  }, []);
 
 
 const pegarJob = async () => {
@@ -30,7 +21,7 @@ const pegarJob = async () => {
     
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify(jobs),
+      body:JSON.stringify(jobs),
       
     });
    
@@ -39,13 +30,30 @@ const pegarJob = async () => {
 
   if (session) {
     return (
-      <>
-        Signed in as {session.user.name} <br />
-        <button onClick={() => signOut()}>Sign out</button>
-        <button onClick={() => pegarJob()}></button>
-      </>
+      <div className = 'login'>
+        <div className = 'position'>
+          
+          
+          <div className = 'loginBox'>
+           Signed in as {session.user.name} 
+           <button onClick={() => signOut()}>Sign out</button>
+          </div>
+          
+          
+          <div className = 'insertProduct'>
+            <form>
+               <input></input>
+               <button onClick={() => pegarJob()}></button>
+            </form>  
+          </div>
+          
+          <div className = 'productList'>
 
-      
+          </div>
+
+
+        </div>
+      </div>     
     )
   }
   return (

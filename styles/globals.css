@@ -15,7 +15,7 @@
 
 .login{
   width: 100vw;
-  height: 100vh;
+  height: 1000px;
   display: flex;
   justify-content:center;
   border: 2px solid blue;
@@ -23,13 +23,14 @@
 }
 .position{
   width: 1500px;
+  
   background-color: yellow;
-  display: flex;
+  display: block;
   justify-content: center;
 }
 .loginBox{
-  align-self: center;
-  height: 60%;
+  margin-left: 70%;
+  height: 10%;
   width: 30%;
   background-color: red;
 }
@@ -47,4 +48,12 @@ button{
   width: 40%;
   height: 30px;
   cursor: pointer;
+  align-self: center;
+}
+.insertProduct{
+  margin-top: 5%;
+  width: 60%;
+  height: 60%;
+  margin-left: 20%;
+  background-color: blue;
 }
