@@ -1,19 +1,21 @@
-import React, {useEffect} from 'react'
+import React, {useState}from 'react'
 import { useSession, signIn, signOut} from "next-auth/react"
 
 
 const Login = () => {
   const { data: session } = useSession()
 
+  const [jobs,setJobs ] = useState({})
 
-  const jobs = {
-    name:'celular',
-    preço:'1200',
-    imageurl:'dasodkoasdfkoasdkoasdkoa',
-    quantidadeDisp:'22',
-    descritivo:'ASKOAKOSKOASKOASOKASKOASKOASKOAKOSo'
+  function useInput(opts) {
+    const [value, setValue] = useState('');
+    const input = <input
+      value={value}
+      onChange={e => setValue(e.target.value)}
+      {...opts} />
+  
+    return [value, input];
   }
-
 
 
 const pegarJob = async () => {
@@ -28,30 +30,43 @@ const pegarJob = async () => {
   }
 
 
+
+  const [username, usernameInput] = useInput({ placeholder: 'jdoe123' });
+  const [preco, setPreco] = useInput({ placeholder: 'Password' });
+  const [imageurl, setImageurl] = useInput({ placeholder: 'Password' });
+  const [quantidadeDisp, setQuantidadeDisp] = useInput({ placeholder: 'Password' });
+  const [ descritivo, setDescritivo] = useInput({ placeholder: 'Password' });
+
+
   if (session) {
     return (
       <div className = 'login'>
         <div className = 'position'>
-          
-          
           <div className = 'loginBox'>
            Signed in as {session.user.name} 
            <button onClick={() => signOut()}>Sign out</button>
           </div>
-          
-          
+
           <div className = 'insertProduct'>
-            <form>
-               <input></input>
-               <button onClick={() => pegarJob()}></button>
-            </form>  
+           {usernameInput}
+           {setPreco}
+           {setImageurl}
+           {setQuantidadeDisp}
+           {setDescritivo}         
+           <button onClick = {pegarJob}></button>
+           <button onClick = {() =>{setJobs({
+                     name:username,
+                     preco:preco,
+                     imageurl:imageurl,
+                     quantidadeDisp:quantidadeDisp,
+                     descritivo:descritivo})}}>
+                       
+          </button>
           </div>
-          
+  
           <div className = 'productList'>
 
           </div>
-
-
         </div>
       </div>     
     )
