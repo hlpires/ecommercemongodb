@@ -1,4 +1,4 @@
-import React, {useState}from 'react'
+import React, {useState,useEffect}from 'react'
 import { useSession, signIn, signOut} from "next-auth/react"
 
 
@@ -19,7 +19,8 @@ const Login = () => {
 
 
 const pegarJob = async () => {
-    fetch('/api/pegarjob',{
+
+ fetch('/api/pegarjob',{
     
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
@@ -27,8 +28,23 @@ const pegarJob = async () => {
       
     });
    
+    
   }
 
+
+
+{/*   useEffect((res) => {
+
+  const response = fetch('/api/pegarproduto',{
+    
+    method: 'GET',
+    headers: {'Content-Type': 'application/json'},
+  });
+  
+  const data = response
+  console.log(res)
+
+}, []); */}
 
 
   const [username, usernameInput] = useInput({ placeholder: 'jdoe123' });
