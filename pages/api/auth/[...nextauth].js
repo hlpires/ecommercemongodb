@@ -1,7 +1,7 @@
 import NextAuth from "next-auth"
 import GithubProvider from "next-auth/providers/github"
 import GoogleProvider from "next-auth/providers/google";
-import clientPromise from '../../../lib/mongodb'
+import clientPromise from '../../../lib/mongoClient'
 import { MongoDBAdapter } from "@next-auth/mongodb-adapter"
 
 require('dotenv').config({path: '../../../.env'});

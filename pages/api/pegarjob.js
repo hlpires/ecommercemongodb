@@ -1,21 +1,19 @@
+import connect from '../../lib/mongodb'
+import userJobSchema  from '../../model/jobSchema'
 
-import { Db } from 'mongodb' 
-import connect from '../../lib/mongodb1'
+ connect()
 
-
-
-
-
-export default async function handler(req,res){
-
-    const {db} = await connect();
-    const data = db.collection("Safire").find({})
-
-    try{
-       console.log(req.body)
-    
-    } catch(error){
-        res.status(400).json({status:'nao conseguimos atualizar o DB'})
-
-    }
+const job = new userJobSchema ({
+name:'inefas',
+email:'Bolsonaro',
+job:{
+    elo:'prata',
+    duo:false,
+    discord:false,
+    elofinal:'bronze'
 }
+ })
+ job.save().then(() =>{console.log('job criado')})
+
+
+
