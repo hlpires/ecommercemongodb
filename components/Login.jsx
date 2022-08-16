@@ -101,16 +101,15 @@ const pegarJob = async () => {
                   <div className = 'productList'>
                   
                   {produtos.map(({name}) => (
-                   <p> {name} </p>
+                   <div className = 'produtosBox'><p className = 'text'> {name} </p></div>
                   ))} 
                   </div>
            )}})()}  
-          
-
-
-
         </div>
-      </div>     
+
+        
+      </div>
+           
     )
   }
   return (
