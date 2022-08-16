@@ -22,7 +22,7 @@
 }
 .position{
   width: 1500px;
-  
+ 
  
   display: block;
   justify-content: center;
@@ -62,8 +62,8 @@ button{
 
 }
 .produtosBox{
-  width: 20%;
-  margin-right: 5%;
+  width: 22%;
+  margin-left: 2.4%;
   height: 450px;
   float: left;
   border: 2px solid red;
@@ -76,6 +76,7 @@ button{
   display: flex;
   width: 100%;
   justify-content: center;
+  border: 1px solid blue;
 }
 
 .text{

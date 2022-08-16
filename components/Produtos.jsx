@@ -4,7 +4,9 @@ const Produtos = () => {
 
 const [produtos,setProdutos] = useState()
 
-
+const handleClick = event => {
+    console.log(event.currentTarget);
+  };
 
 useEffect(() => {
    fetch('/api/pegarproduto',{
@@ -19,7 +21,7 @@ useEffect(() => {
   })
 }, []); 
 
-console.log(produtos)
+
 
 
   return (
@@ -28,18 +30,17 @@ console.log(produtos)
         {(() => {
            if (typeof produtos !== 'undefined') {
                 return ( 
-                  <div>
+                  <div >
                   
                   {produtos.map(({name,imageurl,preco}) => (
-                   <div className = 'produtosBox'>
+                   <div className = 'produtosBox'onClick={handleClick} >
                      <img className ='produtoImg' src={imageurl} width={500} height={500} />
                      <p className = 'text'> {name} </p>
                      <p className = 'text'>R$ {preco} </p>
                      </div>          
                   ))} 
                   
-                  {/*//live.staticflickr.com/65535/52290445401_a0d03184e9_w.jpg */}
-                  {/*//live.staticflickr.com/65535/52289475477_083f1c7c94_w.jpg */}
+
                   </div>
            )}})()} 
 
