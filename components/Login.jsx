@@ -4,8 +4,18 @@ import { useSession, signIn, signOut} from "next-auth/react"
 
 const Login = () => {
   const { data: session } = useSession()
-
+  const [produtos,setProdutos] = useState()
   const [jobs,setJobs ] = useState({})
+
+
+const monark = [
+  {
+   name:'jaozin'
+  },
+  {
+    name:'jaozin1'
+  }
+]
 
   function useInput(opts) {
     const [value, setValue] = useState('');
@@ -45,7 +55,8 @@ const pegarJob = async () => {
     return res.json();
   })
   .then(data =>{
-   console.log(data)
+   
+   setProdutos(data)
   })
 
 
@@ -84,10 +95,20 @@ const pegarJob = async () => {
                        
           </button>
           </div>
-  
-          <div className = 'productList'>
+          {(() => {
+           if (typeof produtos !== 'undefined') {
+                return ( 
+                  <div className = 'productList'>
+                  
+                  {produtos.map(({name}) => (
+                   <p> {name} </p>
+                  ))} 
+                  </div>
+           )}})()}  
+          
 
-          </div>
+
+
         </div>
       </div>     
     )
