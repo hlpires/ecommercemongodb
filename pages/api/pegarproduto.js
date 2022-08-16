@@ -1,5 +1,5 @@
 import connect from '../../lib/mongodb'
-import userJobSchema from '../../model/jobSchema'
+import produtoSchema from '../../model/jobSchema'
 
 connect()
 
@@ -7,7 +7,7 @@ connect()
 export default async function handler(req,res) {    
 
 try {
-    const produto = await userJobSchema.find();
+    const produto = await produtoSchema.find();
     
     res.send(produto)
 }   catch (error) {

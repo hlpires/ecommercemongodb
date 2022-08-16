@@ -1,5 +1,5 @@
 import connect from '../../lib/mongodb'
-import userJobSchema from '../../model/jobSchema'
+import produtoSchema from '../../model/jobSchema'
 
 connect()
 
@@ -8,7 +8,7 @@ const productobj = (req.body)
 
 try {  
 
-    const produto = new userJobSchema (productobj)
+    const produto = new produtoSchema (productobj)
     produto.save().then(() =>{console.log('produto criado')})
 
 
