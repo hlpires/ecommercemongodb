@@ -23,7 +23,7 @@
 .position{
   width: 1500px;
   
-  background-color: yellow;
+ 
   display: block;
   justify-content: center;
 }
@@ -70,5 +70,47 @@ button{
 .text{
   float: left;
   padding: 0.5%;
+}
+.header{
+  justify-content: center;
+  display: flex;
+  height: 150px;
+  width: 100%;
+  background-color: black;
+}
 
+.headerBox{
+  width: 100%;
+  height: 100%;
+
+  justify-content: center;
+  display: block;
+  
+}
+.logo{
+margin-top:0%;
+height: 100%;
+width: 23%;
+background-image: url(../img/cslogobc.png);
+background-size: 100% 100%;
+
+float: left;
+margin-left: 40%;
+align-self: center;
+}
+
+.loginButton{
+  margin-top: 3%;
+  height: 35%;
+  width: 12%;
+  margin-right: 5%;
+  float: right;
+  background-image: url(../img/login.png);
+  background-size: 100% 100%;
+  border-radius: 10px;
+  border: 1px solid white;
+  cursor: pointer;
+}
+.loginButton:hover{
+  border: 1px solid rgb(9, 216, 188);
 }
