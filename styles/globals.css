@@ -197,3 +197,60 @@ font-weight: bolder;
   width: 100%;
   height: 90%;
 }
+.details{
+  width: 50%;
+  display: flex;
+  
+}
+.detailsBox{
+  
+  width: 100%;
+  height: 50%;
+  align-self: center;
+}
+
+.quantidadeBox{
+  width: 25%;
+  height: 12%;
+  margin-left: 37.5%;
+  border: 2px solid rgb(209, 209, 209);
+  display: flex;
+  border-radius: 20px;
+}
+.counter{
+width: 33%;
+height: 100%;
+cursor: pointer;
+
+}
+#counter1{
+background-image: url(../img/minus.png);
+background-size: 100% 100%;
+
+}
+#counter2{
+  background-image: url(../img/plus.png);
+  background-size: 100% 100%;
+}
+.numero{
+  width: 33%;
+  height: 100%;
+  text-align: center;
+  font-size: 28px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.real{
+  padding-right: 2%;
+  color: rgb(0, 0, 0);
+  font-weight:900;
+  
+}
+
+.priceSlug{
+  height: 10%;
+  font-family: regular;
+  text-align: center;
+  font-size: 50px;
+  background-color: red;
+  font-weight: bolder;
+  }
