@@ -63,11 +63,11 @@ const pegarJob = async () => {
 }, []); 
 
 
-  const [username, usernameInput] = useInput({ placeholder: 'jdoe123' });
-  const [preco, setPreco] = useInput({ placeholder: 'Password' });
-  const [imageurl, setImageurl] = useInput({ placeholder: 'Password' });
-  const [quantidadeDisp, setQuantidadeDisp] = useInput({ placeholder: 'Password' });
-  const [ descritivo, setDescritivo] = useInput({ placeholder: 'Password' });
+  const [username, usernameInput] = useInput({ placeholder: 'nome' });
+  const [preco, setPreco] = useInput({ placeholder: 'preco' });
+  const [imageurl, setImageurl] = useInput({ placeholder: 'imageurl' });
+  const [quantidadeDisp, setQuantidadeDisp] = useInput({ placeholder: 'quantidadeDisp' });
+  const [ descritivo, setDescritivo] = useInput({ placeholder: 'descritivo'});
 
 
   if (session) {
@@ -103,7 +103,11 @@ const pegarJob = async () => {
                   {produtos.map(({name,imageurl,preco}) => (
                    <div className = 'produtosBox'>
                      <img className ='produtoImg' src={imageurl} width={500} height={500} />
-                     <p className = 'text'> {name} </p></div>          
+                     <p className = 'text'> {name} </p>
+                     <p className = 'text'> {preco} </p>
+                     </div>
+                     
+                             
                   ))} 
                   
                   
