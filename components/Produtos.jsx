@@ -3,10 +3,11 @@ import React, {useState,useEffect}from 'react'
 const Produtos = () => {
 
 const [produtos,setProdutos] = useState()
+const [dataSlug,setDataSlug] = useState()
 
-const handleClick = event => {
-    console.log(event.currentTarget);
-  };
+const sendProdutos = (name,imageurl,preco) =>{
+  setDataSlug({name,imageurl,preco})
+}
 
 useEffect(() => {
    fetch('/api/pegarproduto',{
@@ -33,7 +34,8 @@ useEffect(() => {
                   <div >
                   
                   {produtos.map(({name,imageurl,preco}) => (
-                   <div className = 'produtosBox'onClick={handleClick} >
+                   <div className = 'produtosBox' onClick={() => sendProdutos(name,imageurl,preco)}>
+                     {console.log(dataSlug)}
                      <img className ='produtoImg' src={imageurl} width={500} height={500} />
                      <p className = 'text'> {name} </p>
                      <p className = 'text'>R$ {preco} </p>
