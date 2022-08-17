@@ -1,4 +1,5 @@
 import React, {useState,useEffect}from 'react'
+import Router from 'next/router'
 
 const Produtos = () => {
 
@@ -7,6 +8,11 @@ const [dataSlug,setDataSlug] = useState()
 
 const sendProdutos = (name,imageurl,preco) =>{
   setDataSlug({name,imageurl,preco})
+  Router.push({
+    pathname: "/produtos/[slug]",
+    query: { dataSlug,slug:'slug'}
+  },)
+  
 }
 
 useEffect(() => {
