@@ -12,8 +12,20 @@ const produtosSlug = () => {
   return (
     
     <div>
-       <Header/>
-       {console.log(name,imageurl,preco)}
+    <Header/>
+      
+      <div className =' slug'>
+       <div className = 'position'>
+         <div className = 'slugBox'>
+           <div className ='imageBox'>
+             <p className ='tittleSlug'>{name}</p>
+             <img className ='image' src ={imageurl}></img>
+             </div>
+           <div className ='details'></div>
+
+         </div>
+       </div>
+      </div> 
     </div>
   )
 }
