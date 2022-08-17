@@ -100,14 +100,13 @@ const pegarJob = async () => {
                 return ( 
                   <div className = 'productList'>
                   
-                  {produtos.map(({name}) => (
+                  {produtos.map(({name,imageurl,preco}) => (
                    <div className = 'produtosBox'>
-                     <img className ='produtoImg' src="//live.staticflickr.com/65535/52290937050_33ecb279ee_w.jpg" width={500} height={500} />
+                     <img className ='produtoImg' src={imageurl} width={500} height={500} />
                      <p className = 'text'> {name} </p></div>          
                   ))} 
                   
-                  {/*//live.staticflickr.com/65535/52290445401_a0d03184e9_w.jpg */}
-                  {/*//live.staticflickr.com/65535/52289475477_083f1c7c94_w.jpg */}
+                  
                   </div>
            )}})()}  
         </div>
