@@ -6,14 +6,14 @@ const produtosSlug = () => {
   
 
   const router =  useRouter()
-  const {query:{dataSlug}} = router
+  const {query:{name,imageurl,preco}} = router
 
 
   return (
     
     <div>
        <Header/>
-       {console.log(dataSlug)}
+       {console.log(name,imageurl,preco)}
     </div>
   )
 }

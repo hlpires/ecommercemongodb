@@ -4,14 +4,15 @@ import Router from 'next/router'
 const Produtos = () => {
 
 const [produtos,setProdutos] = useState()
-const [dataSlug,setDataSlug] = useState()
+
 
 const sendProdutos = (name,imageurl,preco) =>{
-  setDataSlug({name,imageurl,preco})
+  const dataSlug = {name,imageurl,preco}
+  
   Router.push({
     pathname: "/produtos/[slug]",
-    query: { dataSlug,slug:'slug'}
-  },)
+    query: { name,imageurl,preco,slug:'slug'}
+  },)     
   
 }
 
@@ -41,7 +42,7 @@ useEffect(() => {
                   
                   {produtos.map(({name,imageurl,preco}) => (
                    <div className = 'produtosBox' onClick={() => sendProdutos(name,imageurl,preco)}>
-                     {console.log(dataSlug)}
+                     
                      <img className ='produtoImg' src={imageurl} width={500} height={500} />
                      <p className = 'text'> {name} </p>
                      <p className = 'text'>R$ {preco} </p>
