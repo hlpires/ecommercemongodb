@@ -11,6 +11,9 @@ const produtosSlug = () => {
   const {query:{name,imageurl,preco}} = router
   const [numero,setNumero] = useState(1)
   const [cart,setCart] = useState(false)
+  const [cartItens,setCartItens] = useState([])
+
+
   const incNum = () => {
     setNumero((prevQty) => prevQty + 1);
   }
@@ -20,9 +23,12 @@ const produtosSlug = () => {
   }
   
   const adicionar = () =>{
-
-
-
+    setCartItens((prevState) => ([
+      {name,imageurl,preco},
+      ...prevState
+      
+      ]));
+    
   }
 
 
@@ -54,7 +60,7 @@ const produtosSlug = () => {
          </div>
        </div>
       </div>
-      <Cart open={cart} cartitens ={[name,imageurl,preco]} onClose={() => setCart(false)}/>
+      <Cart open={cart} cartitens ={cartItens} onClose={() => setCart(false)}/>
       <Produtos/>
     </div>
   )
