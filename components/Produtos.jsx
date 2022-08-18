@@ -1,13 +1,14 @@
 import React, {useState,useEffect}from 'react'
 import Router from 'next/router'
 
+
 const Produtos = () => {
 
 const [produtos,setProdutos] = useState()
 
 
 const sendProdutos = (name,imageurl,preco) =>{
-  const dataSlug = {name,imageurl,preco}
+  
   
   Router.push({
     pathname: "/produtos/[slug]",
@@ -54,6 +55,7 @@ useEffect(() => {
            )}})()} 
 
         </div>
+        
     </div>
   )
 }
