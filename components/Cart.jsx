@@ -25,7 +25,7 @@ useEffect(() => {
     console.log('cartprops')
   }
 
-}, [cartProps])
+}, [cartProps,dataJson])
 
 useEffect(() => {
   if(cartItens !== null && cartItens !== undefined && Object.keys(cartItens).length !== 0){
