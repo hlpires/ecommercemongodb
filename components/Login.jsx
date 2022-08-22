@@ -8,14 +8,6 @@ const Login = () => {
   const [jobs,setJobs ] = useState({})
 
 
-const monark = [
-  {
-   name:'jaozin'
-  },
-  {
-    name:'jaozin1'
-  }
-]
 
   function useInput(opts) {
     const [value, setValue] = useState('');

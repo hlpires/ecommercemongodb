@@ -11,7 +11,7 @@ const produtosSlug = () => {
   const {query:{name,imageurl,preco}} = router
   const [numero,setNumero] = useState(1)
   const [cart,setCart] = useState(false)
-  const [cartItens,setCartItens] = useState([])
+  const [cartData,setCartData] = useState([])
 
 
   const incNum = () => {
@@ -23,11 +23,13 @@ const produtosSlug = () => {
   }
   
   const adicionar = () =>{
-    setCartItens((prevState) => ([
+    setCartData((prevState) => ([
       {name,imageurl,preco},
       ...prevState
       
       ]));
+
+    
     
   }
 
@@ -60,7 +62,7 @@ const produtosSlug = () => {
          </div>
        </div>
       </div>
-      <Cart open={cart} cartitens ={cartItens} onClose={() => setCart(false)}/>
+      <Cart open={cart} cartProps={cartData} onClose={() => setCart(false)}/>
       <Produtos/>
     </div>
   )
