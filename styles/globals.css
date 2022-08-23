@@ -11,6 +11,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 @font-face {
   font-family: regular;
@@ -101,6 +102,8 @@ h3{
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   font-family: regular;
   cursor: pointer;
+  overflow-y:hidden;
+  margin-bottom: 5%;
 }
 .produtosBox:hover{
 transform: scale(1.05);
@@ -109,6 +112,7 @@ transition: 0.5s;
 .produtoImg{
   width: 100%;
   height: 70%;
+  
 }
 .produtos{
   display: flex;
@@ -168,7 +172,7 @@ align-self: center;
 }
 .slugBox{
   width: 80%;
-  margin-left: 10%;
+  margin-left: 0%;
   height:700px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   display: flex;
@@ -182,7 +186,7 @@ justify-content: center;
   margin-top: 10%;
   margin-left: 10%;
   height: 60%;
-  
+  overflow-y: hidden;
   width: 40%;
 }
 .tittleSlug{
@@ -199,6 +203,7 @@ margin-bottom: 8%;
   filter:brightness(90%);
   width: 100%;
   height: 100%;
+ 
 }
 .details{
   width: 50%;
@@ -280,14 +285,109 @@ background-size: 100% 100%;
   }
   .modalCart{
 
-   
   }
   .cart{
-    width: 20vw;
+    width: 24vw;
     height: 80vh;
-    background-color: red;
+   
     position: absolute;
     display: fixed;
     right: 0.5%;
-    top: 15%
+    top: 16%;
+    transition: 1s;
+    margin-right: -22%;
+    border: 1px solid black;
+    overflow-y: hidden;
+    
+  }
+
+  .cartItemBox{
+    display: flex;
+    border-bottom: 2px solid #e3e3e3;
+    height: 120px;
+    background-color: #f1f1f1;
+    
+  }
+
+  .nameCartBox{
+  
+    margin-left: 10%; 
+    overflow-y: hidden;
+    
+  
+  }
+
+  .priceCartBox{
+    margin-top: 4%;
+    margin-left: 10%; 
+    
+    
+  }
+  .itemCartBox{
+    width: 70%;
+    height: 100px;
+    display: block;
+    margin-top: 15px;
+   
+  }
+ .art{
+ margin-left: 5%;
+   width: 40px;
+   height: 35px;
+   align-self: center;
+   background-image: url(../img/cartcase.png);
+   background-repeat: no-repeat;
+   background-size: 100% 100%;
+ }
+
+  .cartTittleBox{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    font-size: 16px;
+  }
+   h2{
+   align-self: center;
+   margin-left: 3%;
+  }
+  h6{
+    align-self: center;
+    font-size: 23px;
+    margin-left: 3%;
+   }
+  .cartTittleItem{
+    margin-left: 10%;
+  }
+  #detalhes{
+    
+    width: 16%;
+    margin-left: 20%;
+  }
+  .placeholderCart{
+    width: 100%;
+    height: 8%;
+    
+    display: flex;
+    
+  }
+  .placeholderText{
+    margin-left: 22%;
+    align-self: center;
+    color: rgb(73, 73, 73);
+  }
+  .imgCartBox{
+    margin-top: 15px;
+    margin-left: 5%;
+  width: 20%;
+  height: 90px;
+  overflow-y: hidden;
+  }
+  .cartImage{
+width: 100%;
+height: 100%;
+  }
+  #precoPlace{
+    width: 10%;
+    margin-left: 17%;
+    
   }

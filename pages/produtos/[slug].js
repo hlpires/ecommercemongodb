@@ -29,6 +29,8 @@ const produtosSlug = () => {
       
       ]));
 
+      setCart(true)
+
     
     
   }
