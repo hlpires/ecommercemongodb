@@ -24,12 +24,13 @@ const produtosSlug = () => {
   
   const adicionar = () =>{
     setCartData((prevState) => ([
-      {name,imageurl,preco},
+      {name,imageurl,preco,numero},
       ...prevState
       
       ]));
 
       setCart(true)
+      console.log(cartData)
 
     
     

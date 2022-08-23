@@ -22,18 +22,18 @@ const data = JSON.parse(window.localStorage.getItem('cartitens'));
 if (data !== null){
   setDataJson(data)
   setApear('translate(-95%, 0)')
-  console.log(apear + 'apear')
+  
 }
 }, []);
 
 useEffect(() => {
   if(dataJson !== null && typeof dataJson !== 'undefined'){
     setCartItens([...dataJson, ...cartProps])
-    console.log('cartData')
+    
     
   }else{
     setCartItens(cartProps)
-    console.log('cartprops')
+    
   }
 
 }, [cartProps,dataJson])
@@ -41,7 +41,7 @@ useEffect(() => {
 useEffect(() => {
   if(cartItens !== null && cartItens !== undefined && Object.keys(cartItens).length !== 0){
     window.localStorage.setItem('cartitens',JSON.stringify(cartItens))
-    console.log(cartItens)
+    
   }
   
 }, [cartItens])
@@ -59,7 +59,12 @@ useEffect(() => {
           <div className= 'cartTittleBox'>
             <div className = 'art'></div>
             <h2>Carrinho</h2>
-            <h6>{'3 Items'}</h6>
+            {(() => {
+               if (typeof cartItens !== 'undefined' && cartItens !== null) {
+                 return(
+            <h6>{cartItens.length}</h6>
+                 )}
+          })()} 
           </div>
          
             <div>
@@ -68,12 +73,12 @@ useEffect(() => {
                if (typeof cartItens !== 'undefined' && cartItens !== null) {
                   return ( 
                     <div>
-                    {cartItens.map(({name,preco,imageurl}) => (
+                    {cartItens.map(({name,preco,imageurl,numero}) => (
                     <div className ='cartItemBox'>
                        <div className = 'imgCartBox'><img className = 'cartImage' src ={imageurl}></img></div>
                        <div className = 'itemCartBox'>
                          <p className = 'nameCartBox'> {name} </p>
-                         <p className = 'priceCartBox'>R$ {preco} </p>
+                         <p className = 'priceCartBox'> {numero} </p>
                          <p className = 'priceCartBox'>R$ {preco} </p>
                         </div>
                                   
