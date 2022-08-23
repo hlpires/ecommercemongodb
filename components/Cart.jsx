@@ -83,7 +83,15 @@ useEffect(() => {
              )}
              })()}     
                  
-            </div>      
+            </div>
+            <div className= 'paymentBox'>
+              <p className = 'paymentText'>Total</p>
+              <p className = 'paymentTotal'>{'R$'}</p>
+            </div>
+          <div className= 'cartTittleBox'>
+            <div className = 'paymentButton'><p className = 'comprarText'>Comprar</p></div>
+            
+          </div>  
         </div>     
     </div>
   )
