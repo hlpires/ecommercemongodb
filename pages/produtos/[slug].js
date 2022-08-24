@@ -31,10 +31,6 @@ const produtosSlug = () => {
 
       setCart(true)
       
-
-
-    
-    
   }
 
 

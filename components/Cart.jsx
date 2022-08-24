@@ -1,4 +1,5 @@
 import React, {useState,useEffect} from 'react'
+import getStripe from '../lib/stripe'
 
 const cart = ({open,onClose,cartProps,onClear}) => {
 
@@ -21,7 +22,7 @@ useEffect(() => {
 const data = JSON.parse(window.localStorage.getItem('cartitens'));
 if (data !== null){
   setDataJson(data)
-  setApear('translate(-95%, 0)')
+  
   
 }
 }, []);
@@ -35,7 +36,7 @@ useEffect(() => {
     setCartItens(cartProps)
     
   }
-
+  setApear('translate(-95%, 0)')
 }, [cartProps,dataJson])
 
 useEffect(() => {
@@ -53,14 +54,27 @@ const clear = () =>{
  
 }
 
-console.log(cartItens)
-console.log(dataJson)
-console.log(cartProps)
+const handleCheckout = async () => {
+  
+  const stripe = await getStripe();
+  
 
-//const data = JSON.parse(window.localStorage.getItem('cartitens'));
-//window.localStorage.setItem('cartitens',JSON.stringify(cartItens));}
-//setCartItens(JSON.parse(data))
-//const children = cartProps.concat(data);
+  const response = await fetch('/api/checkout',{
+    
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(cartItens),
+    
+  });
+
+  const data = await response.json();
+
+  stripe.redirectToCheckout({sessionId:data.id});
+  
+}
+
+
+
   return (
    
    
@@ -107,7 +121,7 @@ console.log(cartProps)
             <div className = 'paymentButton' onClick = {clear} ><p onClick ={onClear} className = 'comprarText'>Remover Itens</p></div> 
           </div> 
           <div className= 'cartTittleBox'>
-            <div className = 'paymentButton'><p className = 'comprarText'>Comprar</p></div>
+            <div className = 'paymentButton' onClick = {handleCheckout}><p className = 'comprarText'>Comprar</p></div>
           </div>
 
         </div>     
