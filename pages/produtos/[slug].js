@@ -30,7 +30,8 @@ const produtosSlug = () => {
       ]));
 
       setCart(true)
-      console.log(cartData)
+      
+
 
     
     
@@ -65,7 +66,7 @@ const produtosSlug = () => {
          </div>
        </div>
       </div>
-      <Cart open={cart} cartProps={cartData} onClose={() => setCart(false)}/>
+      <Cart open={cart} cartProps={cartData} onClear = {() => {setCartData([])}} onClose={() => setCart(false)}/>
       <Produtos/>
     </div>
   )

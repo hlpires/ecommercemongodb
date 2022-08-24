@@ -1,6 +1,6 @@
 import React, {useState,useEffect} from 'react'
 
-const cart = ({open,onClose,cartProps}) => {
+const cart = ({open,onClose,cartProps,onClear}) => {
 
 if(open !== true){
   return null
@@ -46,6 +46,16 @@ useEffect(() => {
   
 }, [cartItens])
 
+const clear = () =>{
+  setCartItens([]);
+  setDataJson([]);
+  
+ 
+}
+
+console.log(cartItens)
+console.log(dataJson)
+console.log(cartProps)
 
 //const data = JSON.parse(window.localStorage.getItem('cartitens'));
 //window.localStorage.setItem('cartitens',JSON.stringify(cartItens));}
@@ -93,10 +103,13 @@ useEffect(() => {
               <p className = 'paymentText'>Total</p>
               <p className = 'paymentTotal'>{'R$'}</p>
             </div>
+            <div className= 'cartTittleBox'>
+            <div className = 'paymentButton' onClick = {clear} ><p onClick ={onClear} className = 'comprarText'>Remover Itens</p></div> 
+          </div> 
           <div className= 'cartTittleBox'>
             <div className = 'paymentButton'><p className = 'comprarText'>Comprar</p></div>
-            
-          </div>  
+          </div>
+
         </div>     
     </div>
   )
