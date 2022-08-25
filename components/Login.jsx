@@ -80,7 +80,7 @@ const pegarJob = async () => {
            <button onClick = {pegarJob}></button>
            <button onClick = {() =>{setJobs({
                      name:username,
-                     preco:preco,
+                     price:preco,
                      imageurl:imageurl,
                      quantidadeDisp:quantidadeDisp,
                      descritivo:descritivo})}}>
@@ -92,11 +92,11 @@ const pegarJob = async () => {
                 return ( 
                   <div className = 'productList'>
                   
-                  {produtos.map(({name,imageurl,preco}) => (
+                  {produtos.map(({name,imageurl,price}) => (
                    <div className = 'produtosBox'>
                      <img className ='produtoImg' src={imageurl} width={500} height={500} />
                      <p className = 'text'> {name} </p>
-                     <p className = 'text'> {preco} </p>
+                     <p className = 'text'> {price} </p>
                      </div>
                      
                              

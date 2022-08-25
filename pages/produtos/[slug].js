@@ -8,7 +8,7 @@ const produtosSlug = () => {
   
 
   const router =  useRouter()
-  const {query:{name,imageurl,preco}} = router
+  const {query:{name,imageurl,price}} = router
   const [numero,setNumero] = useState(1)
   const [cart,setCart] = useState(false)
   const [cartData,setCartData] = useState([])
@@ -24,7 +24,7 @@ const produtosSlug = () => {
   
   const adicionar = () =>{
     setCartData((prevState) => ([
-      {name,imageurl,preco,numero},
+      {name,imageurl,price,numero},
       ...prevState
       
       ]));
@@ -49,7 +49,7 @@ const produtosSlug = () => {
            <div className ='details'>
            <div className ='detailsBox'>
            <p className ='tittleSlug'>{name}</p>
-           <p className ='priceSlug'><span className = 'real'>R$</span>{preco+',00'}</p>
+           <p className ='priceSlug'><span className = 'real'>R$</span>{price+',00'}</p>
            <div className ='quantidadeBox'>
              <div className ='counter' id ='counter1' onClick = {decNum}></div>
              <div className = 'numero'>{numero}</div>

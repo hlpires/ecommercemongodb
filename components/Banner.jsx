@@ -5,6 +5,7 @@ const Banner = () => {
     <div className = 'banner'>
         <div className = 'position'>
           <div className ='bannerBox'>
+            
 
           </div>
         </div>

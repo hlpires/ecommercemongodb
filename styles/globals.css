@@ -61,14 +61,15 @@ button{
   justify-content: center;
   background-size: 100% 100%;
   background-repeat: no-repeat;
+  border-bottom: 0.5px solid black;
 }
 .bannerBox{
   width: 100%;
   height: 55vh;
-  
-
-
+  display: flex;
+  justify-content: center;
 }
+
 
 .insertProduct{
   margin-top: 5%;
@@ -130,9 +131,10 @@ transition: 0.5s;
 .header{
   justify-content: center;
   display: flex;
-  height: 150px;
+  height: 120px;
   width: 100%;
-  background-color: black;
+  background-color:#f09c75;
+  border-bottom: 2px solid black;
 }
 
 .headerBox{
@@ -156,20 +158,18 @@ align-self: center;
 }
 
 .loginButton{
-  margin-top: 3%;
-  height: 35%;
+  margin-top: 2%;
+  height: 45%;
   width: 12%;
   margin-right: 5%;
   float: right;
   background-image: url(../img/login.png);
   background-size: 100% 100%;
   border-radius: 10px;
-  border: 1px solid white;
+ 
   cursor: pointer;
 }
-.loginButton:hover{
-  border: 1px solid rgb(9, 216, 188);
-}
+
 .slugBox{
   width: 70%;
   margin-left: 5%;

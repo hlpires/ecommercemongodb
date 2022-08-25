@@ -7,12 +7,12 @@ const Produtos = () => {
 const [produtos,setProdutos] = useState()
 
 
-const sendProdutos = (name,imageurl,preco) =>{
+const sendProdutos = (name,imageurl,price) =>{
   
   
   Router.push({
     pathname: "/produtos/[slug]",
-    query: { name,imageurl,preco,slug:'slug'}
+    query: { name,imageurl,price,slug:'slug'}
   },)     
   
 }
@@ -41,12 +41,12 @@ useEffect(() => {
                 return ( 
                   <div >
                   <div className = 'tittleHandler'><h3>Our Products</h3></div>
-                  {produtos.map(({name,imageurl,preco}) => (
-                   <div className = 'produtosBox' onClick={() => sendProdutos(name,imageurl,preco)}>
+                  {produtos.map(({name,imageurl,price}) => (
+                   <div className = 'produtosBox' onClick={() => sendProdutos(name,imageurl,price)}>
                      
                      <img className ='produtoImg' src={imageurl} width={500} height={500} />
                      <p className = 'text'> {name} </p>
-                     <p className = 'text'>R$ {preco} </p>
+                     <p className = 'text'>R$ {price} </p>
                      </div>          
                   ))} 
                   

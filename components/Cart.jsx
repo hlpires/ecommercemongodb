@@ -73,6 +73,7 @@ const handleCheckout = async () => {
   
 }
 
+console.log(cartItens)
 
 
   return (
