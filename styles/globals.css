@@ -98,7 +98,7 @@ h3{
   margin-top: 2%;
   width: 22%;
   margin-left: 2.4%;
-  height: 450px;
+  height: 550px;
   float: left;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   font-family: regular;
@@ -121,12 +121,30 @@ transition: 0.5s;
   justify-content: center;
   
 }
-
+.infoHolder{
+  height: 15%;
+}
 .text{
  width: 100%;
  margin-top: 2%;
  text-align: center;
  padding: 0.5%;
+}
+.text1{
+  align-self: center;
+  margin-top: -1%;
+}
+.comprarProduto{
+  height: 40px;
+  margin-top: 2%;
+  width: 60%;
+  margin-left: 20%;
+  background-color:#f09c75;
+  border-radius: 20px;
+  justify-content: center;
+  font-weight: bolder;
+  font-size: 18px;
+  display: flex;
 }
 .header{
   justify-content: center;
@@ -290,9 +308,7 @@ background-size: 100% 100%;
   font-size: 20px;
   font-weight: bolder;
   }
-  .modalCart{
 
-  }
   .cart{
     width: 24vw;
     height: 80vh;

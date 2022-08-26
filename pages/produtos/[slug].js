@@ -3,6 +3,7 @@ import {useRouter} from 'next/router'
 import Header from '../../components/Header'
 import Produtos from '../../components/Produtos'
 import Cart from '../../components/Cart'
+import Footer from '../../components/Footer'
 
 const produtosSlug = () => {
   
@@ -64,6 +65,7 @@ const produtosSlug = () => {
       </div>
       <Cart open={cart} cartProps={cartData} onClear = {() => {setCartData([])}} onClose={() => setCart(false)}/>
       <Produtos/>
+      <Footer/>
     </div>
   )
 }

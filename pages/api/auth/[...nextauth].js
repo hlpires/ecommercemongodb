@@ -3,9 +3,13 @@ import GithubProvider from "next-auth/providers/github"
 import GoogleProvider from "next-auth/providers/google";
 import clientPromise from '../../../lib/mongoClient'
 import { MongoDBAdapter } from "@next-auth/mongodb-adapter"
+import CredentialsProvider from "next-auth/providers/credentials";
+import connect from '../../../lib/mongodb'
+import userSchema from '../../../model/userSchema'
+
 
 require('dotenv').config({path: '../../../.env'});
-
+connect()
 
 export default NextAuth({
  
@@ -17,8 +21,26 @@ export default NextAuth({
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET
-  })  
+  }),
+    CredentialsProvider({
+      name: "credentials",
+      credentials:{
+        username: { label: "Nome", type: "text" },
+        password: {  label: "Senha", type: "password" }
+      },
+      async authorize(credentials) {
+        
+        const user = await userSchema.findOne({username:{$gte:credentials.username}})
+             if(credentials.username === user.username){
+               console.log('ok')
+               return user
+             }
+               return null        
+        
+      },
+    })
   ],
+ 
   adapter:MongoDBAdapter(clientPromise),
   session:{strategy:'jwt'},
   
