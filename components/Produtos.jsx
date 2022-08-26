@@ -40,14 +40,17 @@ useEffect(() => {
            if (typeof produtos !== 'undefined') {
                 return ( 
                   <div >
-                  <div className = 'tittleHandler'><h3>Our Products</h3></div>
+                  <div className = 'tittleHandler'><h3>Produtos</h3></div>
                   {produtos.map(({name,imageurl,price}) => (
                    <div className = 'produtosBox' onClick={() => sendProdutos(name,imageurl,price)}>
                      
                      <img className ='produtoImg' src={imageurl} width={500} height={500} />
                      <p className = 'text'> {name} </p>
                      <p className = 'text'>R$ {price} </p>
-                     </div>          
+                     </div>
+
+                     
+                             
                   ))} 
                   
 

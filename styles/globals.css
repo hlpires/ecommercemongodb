@@ -452,3 +452,59 @@ height: 100%;
     font-size: 24px;
     
   }
+.footer{
+  display: flex;
+  justify-content: center;
+ background-color: #f6f8f9;
+ border-top: 1px solid rgb(231, 231, 231);
+}
+.footerBox{
+  height: 200px;
+  
+  width: 100%;
+  
+  justify-content: center;
+}
+.pagueBox{
+  margin-top: 2%;
+  margin-left:5%;
+  width: 40%;
+  height: 16%;
+  background-image: url(../img/pague.PNG);
+  background-size: 100% 100%;
+  border-radius: 10px;
+  filter: brightness(97.5%);
+}
+.menuBox{
+  margin-top: 1%;
+  margin-left: 5%;
+  width: 10%;
+  height: 30%;
+  cursor: pointer;
+  background-size: 100% 100%;
+}
+
+.devByBox{
+  margin-top: 0%;
+  margin-left: 38.5%;
+  width: 25%;
+  height: 20%;
+  
+  background-size: 100% 100%;
+}
+
+.menuBoxText{
+  margin-top: 1%;
+  font-weight:normal;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin-left: 14%;
+  font-size: 20px;
+  color: rgb(102, 102, 102);
+}
+.devByText{
+  margin-top: 1%;
+  font-weight:lighter;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin-left: 5%;
+  font-size: 20px;
+}
