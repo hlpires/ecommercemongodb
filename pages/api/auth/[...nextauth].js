@@ -30,18 +30,15 @@ export default NextAuth({
       },
       async authorize(credentials) {
         
-        const user = await userSchema.findOne({username:{$gte:credentials.username}})
-             if(credentials.username === user.username){
-               console.log('ok')
+        const user = await userSchema.findOne({name:{$gte:credentials.username}})
+             if(credentials.username === user.name){
+              
                return user
              }
-               return null        
+               return null
         
       },
     })
   ],
  
-  adapter:MongoDBAdapter(clientPromise),
-  session:{strategy:'jwt'},
-  
 })

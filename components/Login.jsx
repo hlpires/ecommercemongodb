@@ -32,7 +32,9 @@ const pegarJob = async () => {
    
     
   }
-
+if(session){
+  console.log(session)
+}
 
 
   useEffect(() => {
@@ -67,7 +69,7 @@ const pegarJob = async () => {
       <div className = 'login'>
         <div className = 'position'>
           <div className = 'loginBox'>
-           Signed in as {session.user.name} 
+           Signed in as {session.user.name}
            <button onClick={() => signOut()}>Sign out</button>
           </div>
 
