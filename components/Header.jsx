@@ -7,7 +7,7 @@ const Header = () => {
         <div className ='position'>
             <div className ='headerBox'>
                   <a href="/"><div className = 'logo'></div></a>      
-                   <div onClick={() => signIn()} className = 'loginButton'></div>
+                   <div onClick={() => signIn('',{ callbackUrl: '/areausuario' })} className = 'loginButton'></div>
               </div>
         </div>
     </div>
