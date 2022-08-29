@@ -25,14 +25,20 @@ export default NextAuth({
         
         const user = await userSchema.findOne({name:{$gte:credentials.username}})
              if(credentials.username === user.name){
-              
+              console.log(credentials)
                return user
              }
+             console.log('erro')
                return null
         
       },
     })
   ],
+ 
+  pages: {
+    signIn: "/signin",
+    },
+
   callbackUrl: '/areausuario'
 
  

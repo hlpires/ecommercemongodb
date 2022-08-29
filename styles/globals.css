@@ -524,3 +524,34 @@ height: 100%;
   margin-left: 5%;
   font-size: 20px;
 }
+.loginPage{
+  width: 100vw;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+ 
+  background-size: 100% 100%;
+}
+.loginAuth{
+  width: 600px;
+  height: 500px;
+  margin-top: 5%;
+
+}
+.loginTittleHandler{
+  margin-top: 5%;
+}
+.input{
+  margin-bottom: 8%;
+  border: none;
+  border-bottom: 2px solid black;
+}
+.buttonLogin{
+  border-radius: 15px;
+  height:35px;
+  background-color: transparent;
+  border: 1px solid grey;
+}
+.buttonLogin:hover{
+  background-color:#f09c75;
+}
