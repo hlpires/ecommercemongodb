@@ -21,7 +21,7 @@
   width: 100vw;
   display: flex;
   justify-content:center;
-  border: 2px solid blue;
+ 
  
 }
 .position{
@@ -31,13 +31,7 @@
   display: block;
   justify-content: center;
 }
-.loginBox{
-  margin-left: 70%;
-  height: 50px;
-  width: 30%;
- 
-  background-color: red;
-}
+
 input{
   margin-top: 4%;
   margin-left: 20%;
@@ -56,32 +50,23 @@ button{
 }
 
 .banner{
-  background-image: url(../img/banner.png);
+  
   display: flex;
   justify-content: center;
-  background-size: 100% 100%;
+  background-size: 100% 140%;
   background-repeat: no-repeat;
-  border-bottom: 0.5px solid black;
+  background-image: url(../img/banner1.png);
+  border-bottom: 1px solid rgb(172, 170, 170);
 }
 .bannerBox{
   width: 100%;
-  height: 55vh;
+  height: 35vh;
+ 
   display: flex;
   justify-content: center;
+ 
 }
 
-
-.insertProduct{
-  margin-top: 5%;
-  width: 60%;
-  margin-left: 20%;
-  background-color: blue;
-}
-
-.productList{
-  margin-top: 15%;
-
-}
 .tittleHandler{
   height: 200px;
   display: flex;
@@ -139,7 +124,7 @@ transition: 0.5s;
   margin-top: 2%;
   width: 60%;
   margin-left: 20%;
-  background-color:#f09c75;
+  background-color:#a3d4e2;
   border-radius: 20px;
   justify-content: center;
   font-weight: bolder;
@@ -149,10 +134,10 @@ transition: 0.5s;
 .header{
   justify-content: center;
   display: flex;
-  height: 120px;
+  height: 100px;
   width: 100%;
-  background-color:#f09c75;
-  border-bottom: 2px solid black;
+  
+  border-bottom: 1px solid rgb(172, 170, 170);
 }
 
 .headerBox{
@@ -554,4 +539,103 @@ height: 100%;
 }
 .buttonLogin:hover{
   background-color:#f09c75;
+  
+}
+
+.insertProduct{
+  margin-top: 2%;
+  width: 80%;
+  margin-left: 10%;
+  
+}
+
+.registerTittleHandler{
+  width: 100%;
+  margin-top: 3%;
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: bolder;
+  font-size: 50px;
+  
+}
+.inputRegisterBox{
+  width: 100%;
+
+  
+}
+.inputRegister{
+  margin-top: 5%;
+  height: 50px;
+  border-radius: 5px;
+  border: 0.5px solid grey;
+}
+
+.loginBox{
+  margin-top: 2%;
+  margin-left: 35%;
+  height: 80px;
+  width: 30%;
+  border: 1px solid black;
+ display: flex;
+ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+ font-size: 18px;
+}
+.buttonUser{
+  
+  width: 80%;
+  height: 50%;
+  margin-left: 10%;
+  align-self: center;
+
+}
+
+.productList{
+  margin-top: 5%;
+}
+.produtosBoxRegister{
+  margin-top: 2%;
+  width: 80%;
+  margin-left: 10%;
+  height: 250px;
+  float: left;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  font-family: regular;
+  cursor: pointer;
+  overflow-y:hidden;
+  margin-bottom: 5%;
+  display: flex;
+}
+
+.filter{
+  margin-top: 2%;
+  justify-content: center;
+  display: flex;
+}
+
+.filterBox{
+  width: 60%;
+  margin-left: 20%;
+  height: 100px;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.filterItem{
+  width: 20%;
+  margin-top: 3%;
+  height: 40%;
+  cursor: pointer;
+  float: left;
+  margin-left: 4.5%;
+  display: flex;
+  justify-content: center;
+  background-color:rgb(250, 249, 249) ;
+  border: 1px solid rgb(199, 199, 199);
+
+}
+.filterText{
+  align-self: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: bolder;
+  font-size: 18px;
 }

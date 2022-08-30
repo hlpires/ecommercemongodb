@@ -13,6 +13,7 @@ const Login = () => {
     const [value, setValue] = useState('');
     const input = <input
       value={value}
+      className ='inputRegister'
       onChange={e => setValue(e.target.value)}
       {...opts} />
   
@@ -69,16 +70,19 @@ if(session){
       <div className = 'login'>
         <div className = 'position'>
           <div className = 'loginBox'>
-           Signed in as {session.user.name}
-           <button onClick={() => signOut()}>Sign out</button>
+           <div className = 'buttonUser'>Usuario: {session.user.name}
+           <button  onClick={() => signOut()}>Sair</button></div>
           </div>
 
           <div className = 'insertProduct'>
+          <div className = 'registerTittleHandler'><p className ='registerTittle'>Registro de Produtos</p></div>
+          <div className = 'inputRegisterBox'>
            {usernameInput}
            {setPreco}
            {setImageurl}
            {setQuantidadeDisp}
-           {setDescritivo}         
+           {setDescritivo}
+           </div>       
            <button onClick = {pegarJob}></button>
            <button onClick = {() =>{setJobs({
                      name:username,
@@ -95,7 +99,7 @@ if(session){
                   <div className = 'productList'>
                   
                   {produtos.map(({name,imageurl,price}) => (
-                   <div className = 'produtosBox'>
+                   <div className = 'produtosBoxRegister'>
                      <img className ='produtoImg' src={imageurl} width={500} height={500} />
                      <p className = 'text'> {name} </p>
                      <p className = 'text'> {price} </p>
