@@ -10,7 +10,6 @@ export default function Home() {
  
   <Header/>
   <Banner/>
-  <Filter/>
   <Produtos/>
   <Footer/>
   </div> 

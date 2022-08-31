@@ -17,6 +17,7 @@ const sendProdutos = (name,imageurl,price) =>{
   
 }
 
+
 useEffect(() => {
    fetch('/api/pegarproduto',{
     method: 'GET',
@@ -36,11 +37,18 @@ useEffect(() => {
   return (
     <div className = 'produtos'>
         <div className = 'position'>
+        <div className = 'filterBox'>
+              <div className = 'filterItem' onClick = {() =>{setProdutos(produtos.filter(({price}) => price > 10000))}}><p className = 'filterText'>Anéis</p></div>
+              <div className = 'filterItem'><p className = 'filterText'>Colares</p></div>
+              <div className = 'filterItem'><p className = 'filterText'>Pulseiras</p></div>
+              <div className = 'filterItem'><p className = 'filterText'>Brincos</p></div>
+            </div>
+
         {(() => {
            if (typeof produtos !== 'undefined') {
                 return ( 
                   <div>
-                  <div className = 'tittleHandler'><h3>Produtos</h3></div>
+                  <div className = 'tittleHandler'><h3>{produtos.length + '\t Produtos'}</h3></div>
                   {produtos.map(({name,imageurl,price}) => (
                    <div className = 'produtosBox' onClick={() => sendProdutos(name,imageurl,price)}>
                      
