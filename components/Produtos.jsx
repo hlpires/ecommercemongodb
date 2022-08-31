@@ -40,7 +40,7 @@ const filtro = (letra) =>{
 }
 
 
-console.log(produtosF)
+
 
   return (
     <div className = 'produtos'>

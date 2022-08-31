@@ -1,11 +1,14 @@
 import React, {useState,useEffect}from 'react'
 import { useSession, signIn, signOut} from "next-auth/react"
 import Image from 'next/image'
+import { useRouter } from 'next/router'
+
 
 const Login = () => {
   const { data: session } = useSession()
   const [produtos,setProdutos] = useState()
   const [jobs,setJobs ] = useState({})
+  const router = useRouter()
 
 
 
@@ -20,7 +23,7 @@ const Login = () => {
     return [value, input];
   }
 
-
+{/*}
 const pegarJob = async () => {
 
  fetch('/api/pegarjob',{
@@ -33,9 +36,26 @@ const pegarJob = async () => {
    
     
   }
-if(session){
-  console.log(session)
-}
+*/}
+
+  useEffect(() => {
+ console.log(jobs)
+    if(typeof jobs.name !== 'undefined'){
+    fetch('/api/pegarjob',{
+    
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body:JSON.stringify(jobs),
+      
+    });}
+  }, [jobs]);
+
+  useEffect(() => {
+    if(!session){
+      router.push('/')
+    }
+  }, [session]);
+
 
 
   useEffect(() => {
@@ -70,8 +90,23 @@ if(session){
       <div className = 'login'>
         <div className = 'position'>
           <div className = 'loginBox'>
-           <div className = 'buttonUser'>Usuario: {session.user.name}
-           <button  onClick={() => signOut()}>Sair</button></div>
+          {(() => {
+            if(session.user.name === 'monark'){
+            return(<div>
+                     <div className = 'buttonUserBox'>
+                   Usuario: {session.user.name } <span className = 'OBS'>{'OBS: a conta Demo não tem permissão de registro para evitar depravação do APP'}</span>
+
+                     </div>
+                     <button className ='buttonUser' onClick={() => signOut()}>Sair</button>
+                   </div>
+                   )
+            }
+           else{
+            <div className = 'buttonUser'>Usuario: {session.user.name}
+            <button  onClick={() => signOut()}>Sair</button></div>  
+           }
+             })()}
+
           </div>
 
           <div className = 'insertProduct'>
@@ -83,7 +118,7 @@ if(session){
            {setQuantidadeDisp}
            {setDescritivo}
            </div>       
-           <button onClick = {pegarJob}></button>
+           
            <button onClick = {() =>{setJobs({
                      name:username,
                      price:preco,
@@ -100,9 +135,15 @@ if(session){
                   
                   {produtos.map(({name,imageurl,price}) => (
                    <div className = 'produtosBoxRegister'>
-                     <img className ='produtoImg' src={imageurl} width={500} height={500} />
-                     <p className = 'text'> {name} </p>
-                     <p className = 'text'> {price} </p>
+                     <img className ='produtoImgRegister' src={imageurl} width={500} height={500} />
+                     <div className = 'contentRegister'>
+                     <p className = 'textRegister'> {'Produto:\t'+name} </p>
+                     <p className = 'textRegister'> {price} </p>
+                     </div>
+                     <div className = 'contentRegister'>
+                     <p className = 'textRegister'> {'Adicionado por:\t funcionario 1'} </p>
+                     <p className = 'textRegister'> {'Quantidade disponivel: 100'} </p>
+                     </div>
                      </div>
                      
                              
@@ -119,10 +160,7 @@ if(session){
     )
   }
   return (
-    <>
-      Not signed in <br />
-      <button onClick={() => signIn()}>Sign in</button>
-    </>
+null
   )
 
  
