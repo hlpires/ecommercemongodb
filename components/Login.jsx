@@ -23,23 +23,9 @@ const Login = () => {
     return [value, input];
   }
 
-{/*}
-const pegarJob = async () => {
-
- fetch('/api/pegarjob',{
-    
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body:JSON.stringify(jobs),
-      
-    });
-   
-    
-  }
-*/}
 
   useEffect(() => {
- console.log(jobs)
+
     if(typeof jobs.name !== 'undefined'){
     fetch('/api/pegarjob',{
     
@@ -91,7 +77,7 @@ const pegarJob = async () => {
         <div className = 'position'>
           <div className = 'loginBox'>
           {(() => {
-            if(session.user.name === 'monark'){
+            if(session.user.name === 'funcionario'){
             return(<div>
                      <div className = 'buttonUserBox'>
                    Usuario: {session.user.name } <span className = 'OBS'>{'OBS: a conta Demo não tem permissão de registro para evitar depravação do APP'}</span>
@@ -102,8 +88,14 @@ const pegarJob = async () => {
                    )
             }
            else{
-            <div className = 'buttonUser'>Usuario: {session.user.name}
-            <button  onClick={() => signOut()}>Sair</button></div>  
+             return(
+             <div>
+              <div className = 'buttonUserBox'>
+                Usuario: {session.user.name } 
+              </div>
+              <button className ='buttonUser' onClick={() => signOut()}>Sair</button>
+            </div> 
+             )
            }
              })()}
 
@@ -119,12 +111,15 @@ const pegarJob = async () => {
            {setDescritivo}
            </div>       
            
-           <button onClick = {() =>{setJobs({
+           <button  className = 'buttonUser' onClick = {() =>{
+             if(username.length !== 0){
+             console.log(username.length)
+             setJobs({
                      name:username,
                      price:preco,
                      imageurl:imageurl,
                      quantidadeDisp:quantidadeDisp,
-                     descritivo:descritivo})}}>
+                     descritivo:descritivo})}}}>Registrar
                        
           </button>
           </div>
@@ -159,9 +154,7 @@ const pegarJob = async () => {
            
     )
   }
-  return (
-null
-  )
+
 
  
 }

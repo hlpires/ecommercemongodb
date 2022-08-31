@@ -24,8 +24,8 @@ fetch('/api/auth/callback/credentials',{
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify({
         csrfToken: csrfToken,
-        username:'monark',
-        password: '1234'
+        username:'funcionario',
+        password: '2442424'
       }),
   });
 
