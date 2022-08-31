@@ -5,7 +5,7 @@ import Router from 'next/router'
 const Produtos = () => {
 
 const [produtos,setProdutos] = useState()
-
+const [produtosF,setProdutosF] = useState()
 
 const sendProdutos = (name,imageurl,price) =>{
   
@@ -29,27 +29,35 @@ useEffect(() => {
   .then(data =>{
    setProdutos(data)
   })
-}, []); 
+}, []);
+
+useEffect(() => {
+setProdutosF(produtos)
+}, [produtos]);
+
+const filtro = (letra) =>{
+  setProdutosF(produtos.filter(({name}) => name.startsWith(letra)))
+}
 
 
-
+console.log(produtosF)
 
   return (
     <div className = 'produtos'>
         <div className = 'position'>
         <div className = 'filterBox'>
-              <div className = 'filterItem' onClick = {() =>{setProdutos(produtos.filter(({price}) => price > 10000))}}><p className = 'filterText'>Anéis</p></div>
-              <div className = 'filterItem'><p className = 'filterText'>Colares</p></div>
-              <div className = 'filterItem'><p className = 'filterText'>Pulseiras</p></div>
-              <div className = 'filterItem'><p className = 'filterText'>Brincos</p></div>
+              <div className = 'filterItem' onClick = {() =>{filtro('A')}} ><p className = 'filterText'>Anéis</p></div>
+              <div className = 'filterItem' onClick = {() =>{filtro('C')}}><p className = 'filterText'>Colares</p></div>
+              <div className = 'filterItem' onClick = {() =>{filtro('P')}}><p className = 'filterText'>Pulseiras</p></div>
+              <div className = 'filterItem' onClick = {() =>{filtro('B')}}><p className = 'filterText'>Brincos</p></div>
             </div>
 
         {(() => {
-           if (typeof produtos !== 'undefined') {
+           if (typeof produtosF !== 'undefined') {
                 return ( 
                   <div>
-                  <div className = 'tittleHandler'><h3>{produtos.length + '\t Produtos'}</h3></div>
-                  {produtos.map(({name,imageurl,price}) => (
+                  <div className = 'tittleHandler'><h3>{produtosF.length + '\t Produtos'}</h3></div>
+                  {produtosF.map(({name,imageurl,price}) => (
                    <div className = 'produtosBox' onClick={() => sendProdutos(name,imageurl,price)}>
                      
                      <img className ='produtoImg' src={imageurl} width={500} height={500} />
