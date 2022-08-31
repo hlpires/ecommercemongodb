@@ -91,7 +91,7 @@ const Login = () => {
              return(
              <div>
               <div className = 'buttonUserBox'>
-                Usuario: {session.user.name } 
+               <div className ='usuarioShow'> {'Usuario: ' + session.user.name}</div> 
               </div>
               <button className ='buttonUser' onClick={() => signOut()}>Sair</button>
             </div> 
@@ -112,7 +112,7 @@ const Login = () => {
            </div>       
            
            <button  className = 'buttonUser' onClick = {() =>{
-             if(username.length !== 0){
+             if(username.length !== 0 && session.user.name !== 'funcionario'){
              console.log(username.length)
              setJobs({
                      name:username,

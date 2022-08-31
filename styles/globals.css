@@ -582,7 +582,7 @@ height: 100%;
   
   width: 30%;
   border: 1px solid black;
- display: flex;
+
  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
  font-size: 18px;
 }
@@ -590,9 +590,11 @@ height: 100%;
   background-color: red;
   border: 2px solid red;
 }
+
 .buttonUserBox{
   margin-top: 2%;
   width: 80%;
+
   height: 100px;
   margin-left: 10%;
   align-self: center;
