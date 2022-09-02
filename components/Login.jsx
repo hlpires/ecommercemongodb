@@ -8,6 +8,7 @@ const Login = () => {
   const { data: session } = useSession()
   const [produtos,setProdutos] = useState()
   const [jobs,setJobs ] = useState({})
+  const [double,setDouble] = useState()
   const router = useRouter()
 
 
@@ -24,6 +25,7 @@ const Login = () => {
   }
 
 
+
   useEffect(() => {
 
     if(typeof jobs.name !== 'undefined'){
@@ -34,11 +36,12 @@ const Login = () => {
       body:JSON.stringify(jobs),
       
     });}
+   
   }, [jobs]);
 
   useEffect(() => {
     if(!session){
-      router.push('/')
+      
     }
   }, [session]);
 

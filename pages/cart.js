@@ -12,6 +12,7 @@ const cart = () => {
         <Header/>
         <div className = 'cart'>
             <div className ='position'>
+              cart
 
 
             </div>

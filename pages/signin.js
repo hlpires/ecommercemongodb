@@ -1,35 +1,35 @@
-import React, {useEffect} from 'react'
+import React, {useEffect,useState} from 'react'
 import { getCsrfToken } from "next-auth/react"
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import { useSession, signIn, signOut} from "next-auth/react"
+import { useSession, signIn, signOut,getSession} from "next-auth/react"
 import { useRouter } from 'next/router'
 
 export default function SignIn({ csrfToken }) {
 
 const router = useRouter()
-const { data: session } = useSession()
+const axios = require('axios').default;
+const [entrar,setEntrar] = useState()
 
+{/*const { data: session } = useSession()
 useEffect(() => {
-console.log(session)
 if(typeof session !== 'undefined' && session !== null){
-router.push('/areausuario')
+ console.log('logado')
 }
-}, [session]);
+}, [session]); */}
+
 
  const entrarDemo = () =>{
-fetch('/api/auth/callback/credentials',{
-    
-    method: 'POST',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({
+   console.log('try to fetch')
+   
+  axios.post('/api/auth/callback/credentials',{ 
         csrfToken: csrfToken,
         username:'funcionario',
         password: '2442424'
-      }),
   });
-
+ 
  }
+
 
 
   return (
@@ -39,12 +39,13 @@ fetch('/api/auth/callback/credentials',{
       <div className = 'loginAuth'>
 
       <div className = 'loginTittleHandler'><p className ='tittleSlug'>Login</p></div>
-       <form method="post" action="/api/auth/callback/credentials">
+       <form method="post" >
          <input className = 'input' name="csrfToken" type="hidden" defaultValue={csrfToken} />
          <input className = 'input' name="username" type="text" placeholder = 'Login' />
          <input className = 'input' name="password" type="password"  placeholder = 'Senha' />
          <button className = 'buttonLogin' type="submit">Entrar</button>
-         <button className = 'buttonLogin' onClick ={entrarDemo} type="submit">Conta Demo</button>
+         <button className = 'buttonLogin' onClick ={entrarDemo}>Conta Demo</button>
+         <button className = 'buttonLogin' onClick ={()=>{signOut({callbackUrl: 'http://localhost:3000/signin' })}} type="submit">Sair</button>
         </form>
       </div>
     </div>
