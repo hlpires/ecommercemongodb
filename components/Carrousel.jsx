@@ -32,8 +32,9 @@ return (
       <div className = 'produtosBoxCarrousel'>  
       <img className ='produtoImgCarrousel' src={imageurl} width={500} height={500} />
       <div className ='infoHolder'>
-       <p className = 'text'> {name} </p>
-       <p className = 'text'>R$ {price} </p>
+       <p className = 'textCarrousel'> {name} </p>
+       <p className = 'textCarrousel'>R$ {price} </p>
+       <p className = 'textCarrousel'>Até 10 vezes sem juros </p>
         </div>
         </div>        
      ))}
