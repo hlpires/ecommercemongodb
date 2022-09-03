@@ -86,7 +86,7 @@ const Login = () => {
                    Usuario: {session.user.name } <span className = 'OBS'>{'OBS: a conta Demo não tem permissão de registro para evitar depravação do APP'}</span>
 
                      </div>
-                     <button className ='buttonUser' onClick={() => signOut()}>Sair</button>
+                     <button className ='buttonUser' onClick={() => signOut({ callbackUrl: 'http://localhost:3000' })}>Sair</button>
                    </div>
                    )
             }
@@ -96,7 +96,7 @@ const Login = () => {
               <div className = 'buttonUserBox'>
                <div className ='usuarioShow'> {'Usuario: ' + session.user.name}</div> 
               </div>
-              <button className ='buttonUser' onClick={() => signOut()}>Sair</button>
+              <button className ='buttonUser' onClick={() => signOut({ callbackUrl: 'http://localhost:3000' })}>Sair</button>
             </div> 
              )
            }

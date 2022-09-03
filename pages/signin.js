@@ -10,13 +10,14 @@ export default function SignIn({ csrfToken }) {
 const router = useRouter()
 const axios = require('axios').default;
 const [entrar,setEntrar] = useState()
+const { data: session } = useSession()
 
-{/*const { data: session } = useSession()
+
 useEffect(() => {
 if(typeof session !== 'undefined' && session !== null){
- console.log('logado')
+ router.push('/areausuario')
 }
-}, [session]); */}
+}, [session]);
 
 
  const entrarDemo = () =>{
@@ -39,13 +40,12 @@ if(typeof session !== 'undefined' && session !== null){
       <div className = 'loginAuth'>
 
       <div className = 'loginTittleHandler'><p className ='tittleSlug'>Login</p></div>
-       <form method="post" >
+       <form method="post" action ='/api/auth/callback/credentials' >
          <input className = 'input' name="csrfToken" type="hidden" defaultValue={csrfToken} />
          <input className = 'input' name="username" type="text" placeholder = 'Login' />
          <input className = 'input' name="password" type="password"  placeholder = 'Senha' />
          <button className = 'buttonLogin' type="submit">Entrar</button>
          <button className = 'buttonLogin' onClick ={entrarDemo}>Conta Demo</button>
-         <button className = 'buttonLogin' onClick ={()=>{signOut({callbackUrl: 'http://localhost:3000/signin' })}} type="submit">Sair</button>
         </form>
       </div>
     </div>

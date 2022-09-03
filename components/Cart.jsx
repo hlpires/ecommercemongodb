@@ -1,6 +1,7 @@
 import React, {useState,useEffect} from 'react'
 import getStripe from '../lib/stripe'
 
+
 const cart = ({open,onClose,cartProps,onClear}) => {
 
 if(open !== true){
@@ -8,6 +9,10 @@ if(open !== true){
 }
 
 const [apear,setApear] = useState()
+
+
+
+
 
 const mystyle = {
   transform: apear
@@ -42,7 +47,7 @@ useEffect(() => {
 useEffect(() => {
   if(cartItens !== null && cartItens !== undefined && Object.keys(cartItens).length !== 0){
     window.localStorage.setItem('cartitens',JSON.stringify(cartItens))
-    
+
   }
   
 }, [cartItens])

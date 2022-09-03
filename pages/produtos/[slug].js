@@ -1,9 +1,12 @@
 import React,{useState} from 'react'
 import {useRouter} from 'next/router'
 import Header from '../../components/Header'
-import Produtos from '../../components/Produtos'
 import Cart from '../../components/Cart'
 import Footer from '../../components/Footer'
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+
 
 const produtosSlug = () => {
   
@@ -13,6 +16,50 @@ const produtosSlug = () => {
   const [numero,setNumero] = useState(1)
   const [cart,setCart] = useState(false)
   const [cartData,setCartData] = useState([])
+
+  const [cartData1,setCartData1] = useState([
+    {
+      nome:'jailson',
+      price:'2000',
+      numero:'5',
+      imageurl:'3123901290412i9'
+    },
+    {
+      nome:'jailson',
+      price:'2000',
+      numero:'5',
+      imageurl:'3123901290412i9'
+    },
+    {
+      nome:'jailson',
+      price:'2000',
+      numero:'5',
+      imageurl:'3123901290412i9'
+    },
+    {
+      nome:'jailson',
+      price:'2000',
+      numero:'5',
+      imageurl:'3123901290412i9'
+    },
+    {
+      nome:'jailson',
+      price:'2000',
+      numero:'5',
+      imageurl:'3123901290412i9'
+    },
+
+
+  ])
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+
+  };
 
 
   const incNum = () => {
@@ -40,7 +87,7 @@ const produtosSlug = () => {
     <div>
     <Header/>
       
-      <div className =' slug'>
+      <div className ='slug'>
        <div className = 'position'>
          <div className = 'slugBox'>
            <div className ='imageBox'>
@@ -61,10 +108,25 @@ const produtosSlug = () => {
            </div>
 
          </div>
+         <Slider {...settings}>
+         {cartData1.map(({name,imageurl,price}) => (
+                   <div className = 'produtosBoxCarrousel'>
+                     
+                     <div className ='produtoImgCarrousel' src={imageurl} width={500} height={500} />
+                     <div className ='infoHolder'>
+                       <p className = 'text'> {name} </p>
+                       <p className = 'text'>R$ {price} </p>
+                     </div>
+                     
+                     </div>
+
+                     
+                             
+                  ))}
+          </Slider>        
        </div>
       </div>
       <Cart open={cart} cartProps={cartData} onClear = {() => {setCartData([])}} onClose={() => setCart(false)}/>
-      <Produtos/>
       <Footer/>
     </div>
   )
