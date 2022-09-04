@@ -1,24 +1,62 @@
 import React,{useState,useEffect} from 'react'
 import Header from '../components/Header'
-
+import Footer from '../components/Footer'
+import getStripe from '../lib/stripe'
 
 const cart = () => {
 
 const [cartItens,setCartItens] = useState([])
+const [total,setTotal] = useState()
+const [totalInt,setTotalInt] = useState()
+const [result,setResult] = useState(0);
 
 useEffect(() => {
     const data = JSON.parse(window.localStorage.getItem('cartitens'));
     if (data !== null){
       setCartItens(data)
-      
+     
       
     }
 }, []);
 
 
 useEffect(() => {
-console.log(cartItens)
+
+setTotal(cartItens.map(cart => cart.price))
 }, [cartItens]);
+
+
+
+useEffect(() => {
+  if(typeof total !== 'undefined'){
+    setTotalInt(total.map(Number))
+  }
+}, [total]);
+
+
+useEffect(() => {
+  if(typeof totalInt !== 'undefined')
+      setResult(totalInt.reduce((totalp, currentvalue) => totalp = totalp + currentvalue,0))
+}, [totalInt]);
+
+const handleCheckout = async () => {
+  
+  const stripe = await getStripe();
+  
+
+  const response = await fetch('/api/checkout',{
+    
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(cartItens),
+    
+  });
+
+  const data = await response.json();
+
+  stripe.redirectToCheckout({sessionId:data.id});
+  
+}
     
   return (
     <div>
@@ -46,14 +84,16 @@ console.log(cartItens)
        </div>  
         <div className = 'cartPageCheckoutBox'>
           <div className ='cartPageCheckoutTittle'>Pagamento</div>
-          <div className ='cartPageCheckoutText'>Quantidade de itens:</div>
-          <div className ='cartPageCheckoutText'>Total:</div>
-          <div className ='cartPageCheckoutButton'>Checkout</div>
+          <div className ='cartPageCheckoutText'>{'Quantidade de itens:'+'\t'+ cartItens.length}</div>
+          <div className ='cartPageCheckoutText'>{'Total:'+'\t'+ result}</div>
+          <div className ='cartPageCheckoutButton' onClick ={handleCheckout}>Checkout</div>
         </div>
         </div>
+        
 
             </div>
         </div>
+        <Footer/>
     </div>
   )
 }

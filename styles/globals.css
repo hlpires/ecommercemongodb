@@ -460,6 +460,7 @@ height: 100%;
   justify-content: center;
  background-color: #f6f8f9;
  border-top: 1px solid rgb(231, 231, 231);
+
 }
 .footerBox{
   height: 200px;
@@ -725,6 +726,7 @@ transition: 0.5s;
 .cartPage{
   justify-content: center;
   display: flex;
+  margin-bottom: 6%;
 }
 .infoHolder{
   height: 30%;
@@ -741,7 +743,7 @@ transition: 0.5s;
    margin-top: 5%;
  }
 
- 
+ footer
 .produtosBox:hover{
 transform: scale(1.05);
 transition: 0.5s;
@@ -767,24 +769,28 @@ transition: 0.5s;
 }
 
 .cartPageBox{
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   width: 90%;
   margin-left: 5%;  
   height: 160px;
   box-sizing: border-box;
   border-bottom: 1px solid rgb(204, 204, 204);
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  cursor: pointer;
+  margin-top: 2%;
   overflow-y:hidden;
   display: flex;
+  margin-bottom: 1%;
   
 }
 
 .cartPageCheckoutBox{
+  margin-top: 2.2%;
   width: 30%;
-  height: 8%;
-  border:1px solid rgb(177, 177, 177);
+  height: 40%;
+  border:1px solid rgb(228, 227, 227);
   background-color: rgb(248, 248, 248);
-  
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  opacity: 100%;
 }
 .cartPageAllBox{
   margin-top: 5%;
@@ -794,9 +800,12 @@ transition: 0.5s;
   
  
 }
+
 .cartPageItemBox{
-  width: 70%;
+  width: 65%;
+  
   display: block;
+  
   
 }
 .textPageCart{
@@ -832,7 +841,7 @@ text-align: left;
   color: #727272;
   font-size: 22px;
   }
-
+  
 #textPageCartTittleProduto{
     margin-left:0%;
     width: 50%;
@@ -847,9 +856,9 @@ text-align: left;
   }
 
   .produtoImgCartPage{
-    width: 20%;
+    width: 15%;
     margin-top: 1.5%;
-    
+    margin-left: 1.5%;
     filter: brightness(98%);
     border: 1px solid rgb(196, 194, 194);
     height: 80%;
@@ -860,7 +869,8 @@ text-align: left;
   .cartPageCheckoutTittle{
     width: 90%;
     margin-left: 5%;
-    text-align: left  ;
+    text-align: left ;
+    
     margin-top: 3%;
     margin-bottom: 3%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -874,6 +884,8 @@ text-align: left;
     width: 90%;
     margin-left: 5%;
     margin-top: 8%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
   }
 
   .cartPageCheckoutButton{
@@ -887,8 +899,11 @@ text-align: left;
     color: white;
     cursor: pointer;
     padding: 10px 0;
+    font-size: 20px;
+    font-weight: bolder;
   }
 
   .cartPageCheckoutButton:hover{
    transform: scale(1.02);
   }
+  
