@@ -10,10 +10,6 @@ if(open !== true){
 
 const [apear,setApear] = useState()
 
-
-
-
-
 const mystyle = {
   transform: apear
 }
@@ -34,11 +30,11 @@ if (data !== null){
 
 useEffect(() => {
   if(dataJson !== null && typeof dataJson !== 'undefined'){
-    setCartItens([...dataJson, ...cartProps])
+    setCartItens([...cartProps])
     
     
-  }else{
-    setCartItens(cartProps)
+  }else if(dataJson !== null && typeof dataJson !== 'undefined'){
+    setCartItens([...cartProps])
     
   }
   setApear('translate(-70%, 0)')

@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import {useRouter} from 'next/router'
 import Header from '../../components/Header'
 import Cart from '../../components/Cart'
@@ -16,6 +16,17 @@ const produtosSlug = () => {
   const [numero,setNumero] = useState(1)
   const [cart,setCart] = useState(false)
   const [cartData,setCartData] = useState([])
+  const [dataJson,setDataJson] = useState()
+  const [passData,setPassData] = useState()
+
+  useEffect(() => {
+    const data = JSON.parse(window.localStorage.getItem('cartitens'));
+    if (data !== null){
+      setDataJson(data)
+      
+      
+    }
+    }, []);
 
 
 
@@ -34,12 +45,17 @@ const produtosSlug = () => {
       
       ]));
 
-      setCart(true)
-      
+      setCart(true)   
   }
 
 
+useEffect(() => {
+  if(typeof dataJson !== 'undefined')
+setPassData([...dataJson,...cartData])
+}, [cartData]);
+
   return (
+
     
     <div>
     <Header/>
@@ -69,7 +85,7 @@ const produtosSlug = () => {
               <Carrousel/>
        </div>
       </div>
-      <Cart open={cart} cartProps={cartData} onClear = {() => {setCartData([])}} onClose={() => setCart(false)}/>
+      <Cart open={cart} cartProps={passData} onClear = {() => {setCartData([])}} onClose={() => setCart(false)}/>
       <Footer/>
     </div>
   )
