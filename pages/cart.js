@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import Bannerp from '../components/Bannerp'
 import getStripe from '../lib/stripe'
 
 const cart = () => {
@@ -61,6 +62,7 @@ const handleCheckout = async () => {
   return (
     <div>
         <Header/>
+        <Bannerp/>
         <div className = 'cartPage'>
             <div className ='position'>           
             <div className = 'cartPageTittle' style = {{borderBottomColor:'transparent'}}>Carrinho</div>

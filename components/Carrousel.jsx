@@ -1,16 +1,21 @@
 import React,{useState,useEffect} from 'react'
 import Slider from "react-slick";
-
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 const Carrousel = () => {
-
+  
+  
 const [cartItens,setCartItens] = useState([])
   
 const settings = {
-    dots: false,
+    
     infinite: true,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
+    adaptiveHeight: true,
+    autoplay: true,
+     autoplaySpeed: 2000
 
   };
 
@@ -26,7 +31,8 @@ if (data !== null){
 console.log(cartItens)
 
 return (
-   <div>
+   <div className = 'carrousel'>
+     <div className ='carrouselTittle'>Outros Produtos</div>
     <Slider {...settings}>
      {cartItens.map(({name,imageurl,price}) => (
       <div className = 'produtosBoxCarrousel'>  

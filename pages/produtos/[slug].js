@@ -65,6 +65,7 @@ const produtosSlug = () => {
            </div>
 
          </div>
+         
               <Carrousel/>
        </div>
       </div>

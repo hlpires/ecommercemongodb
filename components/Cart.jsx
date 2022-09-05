@@ -41,7 +41,7 @@ useEffect(() => {
     setCartItens(cartProps)
     
   }
-  setApear('translate(-95%, 0)')
+  setApear('translate(-70%, 0)')
 }, [cartProps,dataJson])
 
 useEffect(() => {
@@ -85,6 +85,7 @@ console.log(cartItens)
    
    
    <div className ='modalCart'>
+     <div className = 'maaa' onClick = {onClose}></div>
         <div className= 'cart' style= {mystyle}>
           <div className= 'cartTittleBox'>
             <div className = 'art'></div>
