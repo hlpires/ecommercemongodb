@@ -33,7 +33,7 @@ useEffect(() => {
     setCartItens([...cartProps])
     
     
-  }else if(dataJson !== null && typeof dataJson !== 'undefined'){
+  }else{
     setCartItens([...cartProps])
     
   }

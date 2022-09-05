@@ -50,9 +50,13 @@ const produtosSlug = () => {
 
 
 useEffect(() => {
-  if(typeof dataJson !== 'undefined')
+  if(typeof dataJson !== 'undefined'){
 setPassData([...dataJson,...cartData])
+  }else{
+    setPassData(cartData)
+  }
 }, [cartData]);
+
 
   return (
 
