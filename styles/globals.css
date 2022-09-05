@@ -427,6 +427,8 @@ background-size: 100% 100%;
   width: 20%;
   height: 90px;
   overflow-y: hidden;
+  background-image: url(../img/carrinhoside.png);
+  background-size: 100% 90%;
   }
   .cartImage{
 width: 100%;
@@ -471,8 +473,9 @@ height: 100%;
     margin-left:25%;
     width: 50%;
     height: 60%;
-    background-color: red;
-    border-radius: 20px;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
     text-align: center;
     cursor: pointer;
   }

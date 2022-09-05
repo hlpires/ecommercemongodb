@@ -1,6 +1,6 @@
 import React, {useState,useEffect} from 'react'
 import getStripe from '../lib/stripe'
-
+import imagem from '../img/carrinhoside.png'
 
 const cart = ({open,onClose,cartProps,onClear}) => {
 
@@ -94,10 +94,10 @@ const handleCheckout = async () => {
             <div>
 
             {(() => {
-               if (typeof cartItens !== 'undefined' && cartItens !== null && cartItens.length >= 5) {
+               if (typeof cartItens !== 'undefined' && cartItens !== null && cartItens.length >= 4) {
                   return ( 
                     <div>
-                    {cartItens.map(({name,preco,imageurl,numero}) => (
+                    {cartItens.slice(0, 4).map(({name,preco,imageurl,numero}) => (
                     <div className ='cartItemBox'>
                        <div className = 'imgCartBox'><img className = 'cartImage' src ={imageurl}></img></div>
                        <div className = 'itemCartBox'>
@@ -107,7 +107,12 @@ const handleCheckout = async () => {
                         </div>                                  
                     </div> 
                    ))}
-                   <div className ='cartItemBox'> {'e Outros:'+ cartItens.length + 'itens' }</div>
+                   <div className ='cartItemBox'>
+                   <div className = 'imgCartBox'></div>
+                       <div className = 'itemCartBox'>
+                         <p className = 'nameCartBox'> {'Carrinho com total de: ' + cartItens.length+ ' itens'} </p>
+                        </div>             
+                   </div>
                     </div>  
              )}else if (typeof cartItens !== 'undefined' && cartItens !== null) {
               return ( 
