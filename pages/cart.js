@@ -58,6 +58,7 @@ const handleCheckout = async () => {
   stripe.redirectToCheckout({sessionId:data.id});
   
 }
+console.log('a')
     
   return (
     <div>

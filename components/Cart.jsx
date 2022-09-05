@@ -55,8 +55,6 @@ useEffect(() => {
 const clear = () =>{
   setCartItens([]);
   setDataJson([]);
-  
- 
 }
 
 const handleCheckout = async () => {
@@ -78,7 +76,6 @@ const handleCheckout = async () => {
   
 }
 
-console.log(cartItens)
 
 
   return (
@@ -101,7 +98,7 @@ console.log(cartItens)
             <div>
 
             {(() => {
-               if (typeof cartItens !== 'undefined' && cartItens !== null) {
+               if (typeof cartItens !== 'undefined' && cartItens !== null && cartItens.length >= 5) {
                   return ( 
                     <div>
                     {cartItens.map(({name,preco,imageurl,numero}) => (
@@ -111,12 +108,27 @@ console.log(cartItens)
                          <p className = 'nameCartBox'> {name} </p>
                          <p className = 'priceCartBox'> {numero} </p>
                          <p className = 'priceCartBox'>R$ {preco} </p>
-                        </div>
-                                  
+                        </div>                                  
                     </div> 
-                   ))} 
+                   ))}
+                   <div className ='cartItemBox'> {'e Outros:'+ cartItens.length + 'itens' }</div>
                     </div>  
-             )}
+             )}else if (typeof cartItens !== 'undefined' && cartItens !== null) {
+              return ( 
+                <div>
+                {cartItens.map(({name,preco,imageurl,numero}) => (
+                <div className ='cartItemBox'>
+                   <div className = 'imgCartBox'><img className = 'cartImage' src ={imageurl}></img></div>
+                   <div className = 'itemCartBox'>
+                     <p className = 'nameCartBox'> {name} </p>
+                     <p className = 'priceCartBox'> {numero} </p>
+                     <p className = 'priceCartBox'>R$ {preco} </p>
+                    </div>
+                              
+                </div> 
+               ))} 
+                </div>  
+         )}
              })()}     
                  
             </div>
