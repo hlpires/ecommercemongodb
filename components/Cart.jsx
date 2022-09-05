@@ -41,7 +41,7 @@ useEffect(() => {
 }, [cartProps,dataJson])
 
 useEffect(() => {
-  if(cartItens !== null && cartItens !== undefined && Object.keys(cartItens).length !== 0){
+  if(cartItens !== undefined){
     window.localStorage.setItem('cartitens',JSON.stringify(cartItens))
 
   }
