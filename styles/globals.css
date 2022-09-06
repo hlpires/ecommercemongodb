@@ -170,18 +170,22 @@ align-self: center;
 }
 
 .loginButton{
-  margin-top: 2%;
+  align-self: center;
   height: 45%;
   width: 10%;
+  margin-top:calc(3vh);
   margin-right: 0%;
   float: right;
   background-image: url(../img/login.png);
   background-size: 100% 100%;
   border-radius: 10px;
   cursor: pointer;
+  min-width: 100px;
 }
+
 .carrinhoButton{
-  margin-top: 2%;
+  margin-top: 3vh;
+  min-width: 100px;
   height: 45%;
   width: 10%;
   margin-right: 0%;
@@ -193,8 +197,8 @@ align-self: center;
 }
 
 .slugBox{
-  width: 88%;
-  margin-top: 1%;
+  width: 88.2%;
+  margin-top: 0%;
   margin-left: 6%;
   margin-bottom: 5%;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
@@ -705,31 +709,84 @@ float: left;
 
 margin-left: 5%;
 }
+.filterProductTittle{
+ text-align: center;
+ font-family: regular;
+ margin-top: 5%;
+ font-weight:bold;
+ font-size: calc(15px + 1vw);
+}
+.subProductTittle{
+  text-align: center;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+ margin-top: 0.4%;
+ color: grey;
+ font-size: calc(18px);
+ }
+ .styleProductTittle{
+  text-align: center;
+  font-family: regular;
+ color: transparent;
+ border-bottom: 1px solid black;
+ margin-top: 1.5%;
+ margin-left: 46%;
+ width: 8%;
+ font-size: calc(15px);
+ }
 
 .filterBox{
-  width: 80%;
-  margin-left: 10%;
-  height: 100px;
-  margin-top: 1%;
-  margin-bottom: 1%;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  width: 90%;
+  margin-left: 5%;
+  height: 300px;
+  margin-top: 2%;
+
+  display: flex;
   
 }
 .filterItem:hover{
-  background-color:#a3d4e2;
+border: 1px solid black;
 }
 .filterItem{
   width: 20%;
-  margin-top: 3%;
-  height: 40%;
+  align-self: center;
+  margin-top: 2%;
+  height: 80%;
   cursor: pointer;
   float: left;
   margin-left: 4.5%;
   display: flex;
   justify-content: center;
-  background-color:rgb(250, 249, 249) ;
+  background-color:white ;
   border: 1px solid rgb(199, 199, 199);
   border-radius: 5px;
+}
+#colares{
+  filter:brightness(95%)
+}
+.itemNameBox{
+  width: 90%;
+  margin-left: 5%;
+  height: 40px;
+  margin-top: 0%;
+  margin-bottom: 1%;
+  display: flex;
+  
+}
+.filterItem:hover{
+border: 1px solid black;
+}
+.itemName{
+  width: 20%;
+  align-self: center;
+  height: 80%;
+  cursor: pointer;
+  float: left;
+  margin-left: 4.5%;
+  display: flex;
+  justify-content: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight:540;
+  font-size: 20px;
 
 }
 .filterText{

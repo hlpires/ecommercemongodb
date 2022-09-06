@@ -7,7 +7,7 @@ const Header = () => {
         <div className ='position'>
             <div className ='headerBox'>
                   <a href="/"><div className = 'logo'></div></a>      
-                   <div onClick={() => signIn('credentials',{redirect:true})} className = 'loginButton'></div>
+                   <div className ='headerButtons' onClick={() => signIn('credentials',{redirect:true})} className = 'loginButton'></div>
                    <a href= '/cart' className = 'carrinhoButton'></a>
               </div>
         </div>

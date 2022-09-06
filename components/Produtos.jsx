@@ -1,6 +1,10 @@
 import React, {useState,useEffect}from 'react'
 import Router from 'next/router'
-
+import pulseira from '../img/pulseira.png'
+import aneis from '../img/anéis.png'
+import colares from '../img/colares.png'
+import brinco from '../img/brinco.png'
+import Image from 'next/image'
 
 const Produtos = () => {
 
@@ -45,11 +49,20 @@ const filtro = (letra) =>{
   return (
     <div className = 'produtos'>
         <div className = 'position'>
+          <div className = 'filterProductTittle'>Navegue por Categoria</div>
+          <div className = 'subProductTittle'>Toda Joia conta uma Historia, escolha a sua</div>
+          <div className = 'styleProductTittle'></div>
         <div className = 'filterBox'>
-              <div className = 'filterItem' onClick = {() =>{filtro('A')}} ><p className = 'filterText'>Anéis</p></div>
-              <div className = 'filterItem' onClick = {() =>{filtro('C')}}><p className = 'filterText'>Colares</p></div>
-              <div className = 'filterItem' onClick = {() =>{filtro('P')}}><p className = 'filterText'>Pulseiras</p></div>
-              <div className = 'filterItem' onClick = {() =>{filtro('B')}}><p className = 'filterText'>Brincos</p></div>
+              <div className = 'filterItem' onClick = {() =>{filtro('A')}}><Image className ='filterText' src={pulseira} alt="" /></div>
+              <div className = 'filterItem' onClick = {() =>{filtro('C')}}><Image className ='filterText' src={aneis} alt="" /></div>
+              <div className = 'filterItem' onClick = {() =>{filtro('P')}}><Image className ='filterText' src={brinco} alt="" /></div>
+              <div className = 'filterItem' onClick = {() =>{filtro('B')}}><Image className ='filterText' id ='colares' src={colares} alt="" /></div>
+            </div>
+            <div className = 'itemNameBox'>
+              <div className = 'itemName' onClick = {() =>{filtro('A')}}><p className ='filterText'  alt="" />Pulseiras</div>
+              <div className = 'itemName' onClick = {() =>{filtro('C')}}><p className ='filterText'  alt="" />Anéis</div>
+              <div className = 'itemName' onClick = {() =>{filtro('P')}}><p className ='filterText'  alt="" />Brincos</div>
+              <div className = 'itemName' onClick = {() =>{filtro('B')}}><p className ='filterText'  alt="" />Colares</div>
             </div>
 
         {(() => {
