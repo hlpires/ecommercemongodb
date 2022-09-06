@@ -79,13 +79,13 @@ const handleCheckout = async () => {
                if (typeof cartItens !== 'undefined' && cartItens !== null && cartItens.length >= 4) {
                   return ( 
                     <div>
-                    {cartItens.slice(0, 4).map(({name,preco,imageurl,numero}) => (
+                    {cartItens.slice(0, 4).map(({name,price,imageurl,numero}) => (
                     <div className ='cartItemBox'>
                        <div className = 'imgCartBox'><img className = 'cartImage' src ={imageurl}></img></div>
                        <div className = 'itemCartBox'>
                          <p className = 'nameCartBox'> {name} </p>
-                         <p className = 'priceCartBox'> {numero} </p>
-                         <p className = 'priceCartBox'>R$ {preco} </p>
+                         <p className = 'priceCartBox'> {'Quantidade ' + numero} </p>
+                         <p className = 'priceCartBox'>R$ {price * numero} </p>
                         </div>                                  
                     </div> 
                    ))}
@@ -99,13 +99,13 @@ const handleCheckout = async () => {
              )}else if (typeof cartItens !== 'undefined' && cartItens !== null) {
               return ( 
                 <div>
-                {cartItens.map(({name,preco,imageurl,numero}) => (
+                {cartItens.map(({name,price,imageurl,numero}) => (
                 <div className ='cartItemBox'>
                    <div className = 'imgCartBox'><img className = 'cartImage' src ={imageurl}></img></div>
                    <div className = 'itemCartBox'>
                      <p className = 'nameCartBox'> {name} </p>
-                     <p className = 'priceCartBox'> {numero} </p>
-                     <p className = 'priceCartBox'>R$ {preco} </p>
+                     <p className = 'priceCartBox'> {'Quantidade ' +numero} </p>
+                     <p className = 'priceCartBox'>R$ {price * numero} </p>
                     </div>
                               
                 </div> 

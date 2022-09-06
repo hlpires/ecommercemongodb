@@ -193,9 +193,9 @@ align-self: center;
 }
 
 .slugBox{
-  width: 70%;
-  margin-top: 0%;
-  margin-left: 5%;
+  width: 88%;
+  margin-top: 1%;
+  margin-left: 6%;
   margin-bottom: 5%;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   height:600px;
@@ -209,9 +209,9 @@ justify-content: center;
 margin-bottom: 5%;
 }
 .imageBox{
-  margin-top: 10%;
+  margin-top: 5%;
   margin-left: 10%;
-  height: 60%;
+  height: 80%;
   overflow-y: hidden;
   width: 40%;
 }
@@ -363,7 +363,7 @@ background-size: 100% 100%;
   .priceCartBox{
     margin-top: 4%;
     margin-left: 10%; 
-    color: rgb(201, 171, 90);
+    color: black;
     
   }
   .itemCartBox{
@@ -797,20 +797,6 @@ transition: 0.5s;
   align-items: center;
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 .cartPage{
