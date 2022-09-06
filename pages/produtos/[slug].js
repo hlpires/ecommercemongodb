@@ -22,9 +22,7 @@ const produtosSlug = () => {
   useEffect(() => {
     const data = JSON.parse(window.localStorage.getItem('cartitens'));
     if (data !== null){
-      setDataJson(data)
-      
-      
+      setDataJson(data)   
     }
     }, []);
 
@@ -57,6 +55,7 @@ setPassData([...dataJson,...cartData])
   }
 }, [cartData]);
 
+console.log(passData)
 
   return (
 
@@ -89,7 +88,11 @@ setPassData([...dataJson,...cartData])
               <Carrousel/>
        </div>
       </div>
-      <Cart open={cart} cartProps={passData} onClear = {() => {setCartData([])}} onClose={() => setCart(false)}/>
+      <Cart open={cart} cartProps={passData} onClear = {() => {
+        setPassData([])
+        setCartData([])
+        setDataJson([])
+        }} onClose={() => setCart(false)}/>
       <Footer/>
     </div>
   )

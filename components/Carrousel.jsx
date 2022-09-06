@@ -18,17 +18,21 @@ const settings = {
      autoplaySpeed: 2000
 
   };
-
- 
-useEffect(() => {
-const data = JSON.parse(window.localStorage.getItem('cartitens'));
-if (data !== null){
+  useEffect(() => {
+    fetch('/api/pegarproduto',{
+     method: 'GET',
+     headers: {'Content-Type': 'application/json'},
+   })
+   .then(res =>{
+     return res.json();
+   })
+   .then(data =>{
     setCartItens(data)
-              
-    }
-}, []);
+   })
+ }, []);
+ 
 
-console.log(cartItens)
+
 
 return (
    <div className = 'carrousel'>

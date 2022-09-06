@@ -20,35 +20,29 @@ const [dataJson,setDataJson] = useState()
 
 
 useEffect(() => {
-const data = JSON.parse(window.localStorage.getItem('cartitens'));
-if (data !== null){
-  setDataJson(data)
-  
-  
+
+if (cartProps){
+  setDataJson(cartProps) 
 }
 }, []);
 
+
 useEffect(() => {
-  if(dataJson !== null && typeof dataJson !== 'undefined'){
-    setCartItens([...cartProps])
-    
-    
-  }else{
-    setCartItens([...cartProps])
-    
+  if(dataJson){
+    setCartItens([...dataJson]) 
   }
   setApear('translate(-70%, 0)')
-}, [cartProps,dataJson])
+}, [dataJson])
 
 useEffect(() => {
   if(cartItens !== undefined){
     window.localStorage.setItem('cartitens',JSON.stringify(cartItens))
-
   }
   
 }, [cartItens])
 
 const clear = () =>{
+  window.localStorage.removeItem('cartitens')
   setCartItens([]);
   setDataJson([]);
 }
