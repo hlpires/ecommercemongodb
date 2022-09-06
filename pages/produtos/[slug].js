@@ -55,7 +55,16 @@ setPassData([...dataJson,...cartData])
   }
 }, [cartData]);
 
-console.log(passData)
+useEffect(() => {
+  if(passData !== undefined){
+    window.localStorage.setItem('cartitens',JSON.stringify(passData))
+ 
+  }
+  
+}, [passData])
+
+
+
 
   return (
 

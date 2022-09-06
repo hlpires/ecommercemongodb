@@ -18,7 +18,6 @@ const [cartItens,setCartItens] = useState()
 const [dataJson,setDataJson] = useState()
 
 
-
 useEffect(() => {
 
 if (cartProps){
@@ -34,12 +33,6 @@ useEffect(() => {
   setApear('translate(-70%, 0)')
 }, [dataJson])
 
-useEffect(() => {
-  if(cartItens !== undefined){
-    window.localStorage.setItem('cartitens',JSON.stringify(cartItens))
-  }
-  
-}, [cartItens])
 
 const clear = () =>{
   window.localStorage.removeItem('cartitens')
