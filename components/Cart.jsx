@@ -17,21 +17,16 @@ const mystyle = {
 const [cartItens,setCartItens] = useState()
 const [dataJson,setDataJson] = useState()
 
-
-useEffect(() => {
-
-if (cartProps){
-  setDataJson(cartProps) 
+if(typeof cartProps !== 'undefined'){
+console.log(cartProps)
 }
-}, []);
-
 
 useEffect(() => {
-  if(dataJson){
-    setCartItens([...dataJson]) 
+  if(cartProps){
+    setCartItens(cartProps) 
   }
   setApear('translate(-70%, 0)')
-}, [dataJson])
+}, [cartProps])
 
 
 const clear = () =>{
