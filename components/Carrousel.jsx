@@ -1,23 +1,46 @@
 import React,{useState,useEffect} from 'react'
 import Slider from "react-slick";
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+
 const Carrousel = () => {
   
   
 const [cartItens,setCartItens] = useState([])
+
+
+function SampleNextArrow(props) {
+  //const { className, style, onClick } = props;
+  const className = 'carrouselButton'
+  return (
+    <div
+      className={className}
+      
+    />
+  );
+}
+
+function SamplePrevArrow(props) {
+  const className = 'carrouselButton'
+  return (
+    <div
+      className={className}
+     
+    />
+  );
+}
   
 const settings = {
-    
+    dots:false,
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: 5,
     slidesToScroll: 1,
     adaptiveHeight: true,
     autoplay: true,
-     autoplaySpeed: 2000
-
+    autoplaySpeed: 2000,
+   
   };
+
+  
   useEffect(() => {
     fetch('/api/pegarproduto',{
      method: 'GET',
@@ -36,10 +59,12 @@ const settings = {
 
 return (
    <div className = 'carrousel'>
-     <div className ='carrouselTittle'>Outros Produtos</div>
+ <div className = 'filterProductTittle'>Aproveite</div>
+          <div className = 'subProductTittle'>Toda Joia conta uma Historia, escolha a sua</div>
+          <div className = 'styleProductTittle'></div>
     <Slider {...settings}>
      {cartItens.map(({name,imageurl,price}) => (
-      <div className = 'produtosBoxCarrousel'>  
+      <div style = {{ width: 300 }} className = 'produtosBoxCarrousel'>  
       <img className ='produtoImgCarrousel' src={imageurl} width={500} height={500} />
       <div className ='infoHolder'>
        <p className = 'textCarrousel'> {name} </p>

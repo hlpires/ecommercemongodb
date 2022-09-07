@@ -5,11 +5,19 @@ import aneis from '../img/anéis.png'
 import colares from '../img/colares.png'
 import brinco from '../img/brinco.png'
 import Image from 'next/image'
+import Carrousel from './Carrousel'
 
 const Produtos = () => {
 
 const [produtos,setProdutos] = useState()
 const [produtosF,setProdutosF] = useState()
+const [showMore, setShowMore] = useState(false);
+const [showButton,setShowButton] = useState('');
+
+
+const mystyle = {
+display:showButton
+}
 
 const sendProdutos = (name,imageurl,price) =>{
   
@@ -70,7 +78,7 @@ const filtro = (letra) =>{
                 return ( 
                   <div>
                   <div className = 'tittleHandler'><h3>{produtosF.length + '\t Produtos'}</h3></div>
-                  {produtosF.map(({name,imageurl,price}) => (
+                  {produtosF.slice(0,8).map(({name,imageurl,price}) => (
                    <div className = 'produtosBox' onClick={() => sendProdutos(name,imageurl,price)}>
                      
                      <img className ='produtoImg' src={imageurl} width={500} height={500} />
@@ -80,15 +88,24 @@ const filtro = (letra) =>{
                      </div>
                      <div className ='comprarProduto'><p className = 'text1'>Comprar</p></div>
                      </div>
-
-                     
-                             
                   ))} 
-                  
-
+                  {showMore && produtosF.slice(8).map(({name,imageurl,price}) => (
+                   <div className = 'produtosBox' onClick={() => sendProdutos(name,imageurl,price)}>
+                     
+                     <img className ='produtoImg' src={imageurl} width={500} height={500} />
+                     <div className ='infoHolder'>
+                       <p className = 'text'> {name} </p>
+                       <p className = 'text'>R$ {price} </p>
+                     </div>
+                     <div className ='comprarProduto'><p className = 'text1'>Comprar</p></div>
+                     </div>
+                  ))}  
+                   <div style = {mystyle} className ='buttonBox'><button type="button" class="button" onClick={() =>{
+                     setShowButton('none')
+                     setShowMore(true)}}>Carregar mais Produtos</button></div>
                   </div>
            )}})()} 
-
+            <Carrousel/>
         </div>
         
     </div>
