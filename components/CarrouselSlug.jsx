@@ -3,7 +3,8 @@ import Slider from "react-slick";
 import Router from 'next/router'
 
 
-const Carrousel = () => {
+
+const CarrouselSlug = () => {
   
   
 const [cartItens,setCartItens] = useState([])
@@ -12,12 +13,12 @@ const [cartItens,setCartItens] = useState([])
 const sendProdutos = (name,imageurl,price) =>{
   
   
-  Router.push({
-    pathname: "/produtos/[slug]",
-    query: { name,imageurl,price,slug:'slug'}
-  },)     
-  
-}
+    Router.push({
+      pathname: "/produtos/[slug]",
+      query: { name,imageurl,price,slug:'slug'}
+    },)     
+    
+  }
 
 function SampleNextArrow(props) {
   //const { className, style, onClick } = props;
@@ -44,7 +45,7 @@ const settings = {
     dots:false,
     infinite: true,
     speed: 500,
-    slidesToShow: 5,
+    slidesToShow: 4,
     slidesToScroll: 1,
     adaptiveHeight: true,
     autoplay: true,
@@ -70,25 +71,19 @@ const settings = {
 
 
 return (
-   <div className = 'carrousel'>
+   <div className = 'carrouselSlug'>
  <div className = 'filterProductTittle'>Aproveite</div>
           <div className = 'subProductTittle'>Toda Joia conta uma Historia, escolha a sua</div>
           <div className = 'styleProductTittle'></div>
     <Slider {...settings}>
      {cartItens.map(({name,imageurl,price}) => (
-      <div style = {{ width: 300 }} className = 'produtosBoxCarrousel' onClick = {() => sendProdutos(name,imageurl,price)}>  
-      <img className ='produtoImgCarrousel' src={imageurl} width={500} height={500} />
-      <div className ='infoHolder'>
-       <p className = 'textCarrousel'> {name} </p>
-       <p className = 'textCarrousel'>R$ {price} </p>
-       <p className = 'textCarrousel'>Até 10 vezes sem juros </p>
-       
-        </div>
-        </div>        
+      <div style = {{ width: 300 }} className = 'produtosBoxCarrouselSlug' onClick ={() => sendProdutos(name,imageurl,price)}>  
+      <img className ='produtoImgCarrouselSlug' src={imageurl} width={500} height={500} />
+    </div>        
      ))}
     </Slider> 
    </div>
   )
 }
 
-export default Carrousel
+export default CarrouselSlug

@@ -4,7 +4,7 @@ const Bannerp = () => {
     return (
         <div className = 'bannerp'>
             <div className = 'position'>
-              <div className ='bannerBox'>
+              <div className ='bannerBox1'>
                 
     
               </div>

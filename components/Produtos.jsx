@@ -72,12 +72,15 @@ const filtro = (letra) =>{
               <div className = 'itemName' onClick = {() =>{filtro('P')}}><p className ='filterText'  alt="" />Brincos</div>
               <div className = 'itemName' onClick = {() =>{filtro('B')}}><p className ='filterText'  alt="" />Colares</div>
             </div>
+            <div className = 'filterProductTittle'>Navegue por Categoria</div>
+          <div className = 'subProductTittle'>Toda Joia conta uma Historia, escolha a sua</div>
+          <div className = 'styleProductTittle'></div>
 
         {(() => {
            if (typeof produtosF !== 'undefined') {
                 return ( 
                   <div>
-                  <div className = 'tittleHandler'><h3>{produtosF.length + '\t Produtos'}</h3></div>
+                  
                   {produtosF.slice(0,8).map(({name,imageurl,price}) => (
                    <div className = 'produtosBox' onClick={() => sendProdutos(name,imageurl,price)}>
                      
@@ -89,6 +92,7 @@ const filtro = (letra) =>{
                      <div className ='comprarProduto'><p className = 'text1'>Comprar</p></div>
                      </div>
                   ))} 
+                  
                   {showMore && produtosF.slice(8).map(({name,imageurl,price}) => (
                    <div className = 'produtosBox' onClick={() => sendProdutos(name,imageurl,price)}>
                      
@@ -102,7 +106,7 @@ const filtro = (letra) =>{
                   ))}  
                    <div style = {mystyle} className ='buttonBox'><button type="button" class="button" onClick={() =>{
                      setShowButton('none')
-                     setShowMore(true)}}>Carregar mais Produtos</button></div>
+                     setShowMore(true)}}>Carregar mais </button></div>
                   </div>
            )}})()} 
             <Carrousel/>
