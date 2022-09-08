@@ -83,7 +83,7 @@ const handleCheckout = async () => {
           <div className ='cartPageCheckoutTittle'>Pagamento</div>
           <div className ='cartPageCheckoutText'>{'Quantidade de itens:'+'\t'+ cartItens.length}</div>
           <div className ='cartPageCheckoutText'>{'Total:'+'\t'+ result}</div>
-          <div className ='cartPageCheckoutButton' onClick ={handleCheckout}>Checkout</div>
+          <div className ='cartPageCheckoutButton' onClick ={handleCheckout}>Comprar</div>
         </div>
         </div>
         

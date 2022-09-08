@@ -14,11 +14,13 @@ const [result,setResult] = useState(0);
 const mystyle = {
   transform: apear
 }
+
 const [cartItens,setCartItens] = useState()
 
 
+if(typeof cartProps !== 'undefined'){
 
-
+}
 
 useEffect(() => {
   if(cartProps){
@@ -31,7 +33,6 @@ useEffect(() => {
 const clear = () =>{
   window.localStorage.removeItem('cartitens')
   setCartItens([]);
-  setDataJson([]);
 }
 
 const handleCheckout = async () => {

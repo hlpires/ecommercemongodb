@@ -1026,7 +1026,8 @@ transition: 0.5s;
 
 
  .cartPage{
-   margin-top: 5%;
+   margin-top: 2%;
+  
  }
 
 
@@ -1067,11 +1068,11 @@ transition: 0.5s;
   opacity: 100%;
 }
 .cartPageAllBox{
-  margin-top: 5%;
+  margin-top: 2%;
   width: 100%;
   height: 100%;
   display: flex;
- 
+ margin-bottom: 1%;
   margin-left: 2%;
  
 }
