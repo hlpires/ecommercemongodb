@@ -8,7 +8,6 @@ const cart = () => {
 
 const [cartItens,setCartItens] = useState([])
 const [total,setTotal] = useState()
-const [totalInt,setTotalInt] = useState()
 const [result,setResult] = useState(0);
 
 useEffect(() => {
@@ -22,23 +21,18 @@ useEffect(() => {
 
 
 useEffect(() => {
+  if(typeof cartItens !== 'undefined')
+  setTotal(cartItens.map(cart => Number(cart.price)*cart.numero))
+  }, [cartItens]);
+  
+  
+  
+  useEffect(() => {
+    if(typeof total !== 'undefined')
+        setResult(total.reduce((totalp, currentvalue) => totalp = totalp + currentvalue,0))
+  }, [total]);
 
-setTotal(cartItens.map(cart => cart.price))
-}, [cartItens]);
-
-
-
-useEffect(() => {
-  if(typeof total !== 'undefined'){
-    setTotalInt(total.map(Number))
-  }
-}, [total]);
-
-
-useEffect(() => {
-  if(typeof totalInt !== 'undefined')
-      setResult(totalInt.reduce((totalp, currentvalue) => totalp = totalp + currentvalue,0))
-}, [totalInt]);
+  console.log(result)
 
 const handleCheckout = async () => {
   

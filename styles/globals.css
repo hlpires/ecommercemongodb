@@ -445,10 +445,26 @@ background-size: 100% 120%;
   }
 
   .priceCartBox{
+    margin-top: 2%;
+    margin-left: 10%; 
+    color: black;
+    background-color: #5099f8;
+    width: 25%;
+    height: 30%;
+    color: white;
+    text-align: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  }
+  .priceCartText{
+   padding-top: 7px;
+   margin-right: 10%;
+  }
+
+  .quantidadeCartBox{
     margin-top: 4%;
     margin-left: 10%; 
     color: black;
-    
+    width: 30%;
   }
   .itemCartBox{
     width: 70%;
@@ -535,6 +551,7 @@ height: 100%;
   }
   .paymentText{
     margin-top: 2%;
+    width: 40%;
     font-size: 20px;
     font-family:Arial, Helvetica, sans-serif;
     margin-left: 10%;
@@ -859,9 +876,9 @@ margin-left: 5%;
  }
 
 .filterBox{
-  width: 90%;
-  margin-left: 2%;
-  height: 300px;
+  width: 80%;
+  margin-left: 10%;
+  height: 250px;
   margin-top: 2%;
 
   display: flex;
@@ -889,8 +906,8 @@ border: 1px solid black;
   filter:brightness(95%)
 }
 .itemNameBox{
-  width: 90%;
-  margin-left: 2%;
+  width: 80%;
+  margin-left: 10%;
   height: 40px;
   margin-top: 0%;
   margin-bottom: 1%;

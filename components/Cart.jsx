@@ -9,17 +9,16 @@ if(open !== true){
 }
 
 const [apear,setApear] = useState()
-
+const [total,setTotal] = useState()
+const [result,setResult] = useState(0);
 const mystyle = {
   transform: apear
 }
-
 const [cartItens,setCartItens] = useState()
-const [dataJson,setDataJson] = useState()
 
-if(typeof cartProps !== 'undefined'){
-console.log(cartProps)
-}
+
+
+
 
 useEffect(() => {
   if(cartProps){
@@ -53,8 +52,19 @@ const handleCheckout = async () => {
   stripe.redirectToCheckout({sessionId:data.id});
   
 }
+useEffect(() => {
+  if(typeof cartItens !== 'undefined')
+  setTotal(cartItens.map(cart => Number(cart.price)*cart.numero))
+  }, [cartItens]);
+  
+  
+  
+  useEffect(() => {
+    if(typeof total !== 'undefined')
+        setResult(total.reduce((totalp, currentvalue) => totalp = totalp + currentvalue,0))
+  }, [total]);
 
-
+  console.log(result)
 
   return (
    
@@ -84,8 +94,8 @@ const handleCheckout = async () => {
                        <div className = 'imgCartBox'><img className = 'cartImage' src ={imageurl}></img></div>
                        <div className = 'itemCartBox'>
                          <p className = 'nameCartBox'> {name} </p>
-                         <p className = 'priceCartBox'> {'Quantidade ' + numero} </p>
-                         <p className = 'priceCartBox'>R$ {price * numero} </p>
+                         <p className = 'quantidadeCartBox'> {'Quantidade ' + numero} </p>
+                         <div className = 'priceCartBox'><p className ='priceCartText'> {'R$ ' + price * numero}</p> </div>
                         </div>                                  
                     </div> 
                    ))}
@@ -104,8 +114,8 @@ const handleCheckout = async () => {
                    <div className = 'imgCartBox'><img className = 'cartImage' src ={imageurl}></img></div>
                    <div className = 'itemCartBox'>
                      <p className = 'nameCartBox'> {name} </p>
-                     <p className = 'priceCartBox'> {'Quantidade ' +numero} </p>
-                     <p className = 'priceCartBox'>R$ {price * numero} </p>
+                     <p className = 'quantidadeCartBox'> {'Quantidade ' + numero} </p>
+                         <div className = 'priceCartBox'><p className ='priceCartText'> {'R$ ' + price * numero}</p> </div>
                     </div>
                               
                 </div> 
@@ -116,8 +126,8 @@ const handleCheckout = async () => {
                  
             </div>
             <div className= 'paymentBox'>
-              <p className = 'paymentText'>Total</p>
-              <p className = 'paymentTotal'>{'R$'}</p>
+              <p className = 'paymentText'>{'Total: R$ '+ result }</p>
+             
             </div>
             <div className= 'cartTittleBox'>
             <div className = 'paymentButton' onClick = {clear} ><p onClick ={onClear} className = 'comprarText'>Remover Itens</p></div> 
