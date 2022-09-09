@@ -23,8 +23,8 @@ const sendProdutos = (name,imageurl,price) =>{
   
   
   Router.push({
-    pathname: "/produtos/slug",
-    query: { name,imageurl,price}
+    pathname: "/produtos/[slug]",
+    query: { name,imageurl,price,slug:'slug'}
   },)     
   
 }

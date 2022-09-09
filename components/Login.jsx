@@ -79,30 +79,22 @@ const Login = () => {
       <div className = 'login'>
         <div className = 'position'>
           <div className = 'loginBox'>
-          {(() => {
-            if(session.user.name === 'funcionario'){
-            return(<div>
-                     <div className = 'buttonUserBox'>
-                   Usuario: {session.user.name } <span className = 'OBS'>{'OBS: a conta Demo não tem permissão de registro para evitar depravação do APP'}</span>
-
+            <div className ='loginBoxHolder'>
+                     <div className = 'loginBoxImg'>                    
                      </div>
-                     <button className ='buttonUser' onClick={() => signOut({ callbackUrl: 'http://localhost:3000' })}>Sair</button>
-                   </div>
-                   )
-            }
-           else{
-             return(
-             <div>
-              <div className = 'buttonUserBox'>
-               <div className ='usuarioShow'> {'Usuario: ' + session.user.name}</div> 
-              </div>
-              <button className ='buttonUser' onClick={() => signOut({ callbackUrl: 'http://localhost:3000' })}>Sair</button>
-            </div> 
-             )
-           }
-             })()}
-
+                     <div className = 'buttonUserBox'>
+                      Usuario: {session.user.name } <span className = 'OBS'>{'OBS: a conta Demo não tem permissão de registro para evitar depravação do APP'}</span>
+                     </div>
+                     <div className ='buttonUser' onClick={() => signOut({ callbackUrl: 'http://localhost:3000' })}>Sair</div>
+                   </div>                  
           </div>
+          <div className = 'loginBoxItem'>
+           <div className ='loginBoxItemFilter'><p className ='textLogin'>Registro de Produtos</p></div>
+           <div className ='loginBoxItemFilter'><p className ='textLogin'>Historico de Registro</p></div>
+          </div>
+          
+          
+          
 
           <div className = 'insertProduct'>
           <div className = 'registerTittleHandler'><p className ='registerTittle'>Registro de Produtos</p></div>
