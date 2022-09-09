@@ -1,6 +1,5 @@
 import React, {useState,useEffect} from 'react'
 import getStripe from '../lib/stripe'
-import imagem from '../img/carrinhoside.png'
 
 const cart = ({open,onClose,cartProps,onClear}) => {
 
