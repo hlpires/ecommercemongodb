@@ -730,7 +730,7 @@ cursor: pointer;
 }
 
 .insertProduct{
-  margin-top: 2%;
+  
   width: 80%;
   margin-left: 10%;
   
@@ -797,13 +797,14 @@ background-size: 100% 100%;
 background-repeat: none;
 
 }
+
 .buttonUser{
 width: 15%;
 margin-left: 8%;
 margin-top: 2.5%;
 text-align: center;
-border: 2px solid black;
-background-color: blue;
+border: 1px solid rgb(143, 143, 143);
+background-color: #0067f3;
 color: white;
 height: 40px;
 border-radius: 5px;
@@ -813,8 +814,31 @@ font-weight: bolder;
 cursor: pointer;
 }
 .buttonUser:hover{
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: #0067f3;
+  border: 2px solid black;
+}
+
+.buttonUser1{
+  width: 15%;
+margin-left: 42.5%;
+margin-top: 2.5%;
+text-align: center;
+border: 1px solid rgb(143, 143, 143);
+background-color: #0067f3;
+color: white;
+height: 40px;
+border-radius: 5px;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+font-size: 18px;
+font-weight: bolder;
+cursor: pointer;
+}
+
+.buttonUser1:hover{
+  background-color: white;
+  color: #0067f3;
+  border: 2px solid black;
 }
 .OBS{
   color: red;
@@ -840,20 +864,35 @@ border-top: 1px solid transparent;
 font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 font-weight: bolder;
 cursor: pointer;
-background-color: blue;
+background-color: #0067f3;
 color: white;
  }
+ 
+ .loginBoxItemFilter:hover{
+  background-color: white;
+  color: #0067f3;
+  border: 1px solid black;
+}
+ 
+
+
+ 
+
  .textLogin{
  padding-top: 12px;
  font-size: 16px;
  }
+ .textLogin1{
+  padding-top: 6px;
+ }
 .productList{
   margin-top: 5%;
+  margin-left: 5%;
 }
 .produtosBoxRegister{
   margin-top: 2%;
-  width: 80%;
-  margin-left: 10%;
+  width: 40%;
+  margin-left: 5%;
   height: 150px;
   float: left;
   border: 1px solid rgb(209, 208, 208);
@@ -893,6 +932,7 @@ float: left;
 
 margin-left: 5%;
 }
+
 .filterProductTittle{
  text-align: center;
  font-family: regular;
@@ -1122,11 +1162,9 @@ transition: 0.5s;
 
 .cartPageItemBox{
   width: 65%;
-  
   display: block;
-  
-  
 }
+
 .textPageCart{
 align-self: center;
 float: left;

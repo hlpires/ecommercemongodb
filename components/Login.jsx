@@ -8,8 +8,8 @@ const Login = () => {
   const { data: session } = useSession()
   const [produtos,setProdutos] = useState()
   const [jobs,setJobs ] = useState({})
-  const [double,setDouble] = useState()
-  const router = useRouter()
+  const [show,setShow] = useState(false)
+
 
 
 
@@ -75,6 +75,8 @@ const Login = () => {
 
 
   if (session) {
+
+    if(!show){
     return (
       <div className = 'login'>
         <div className = 'position'>
@@ -85,12 +87,12 @@ const Login = () => {
                      <div className = 'buttonUserBox'>
                       Usuario: {session.user.name } <span className = 'OBS'>{'OBS: a conta Demo não tem permissão de registro para evitar depravação do APP'}</span>
                      </div>
-                     <div className ='buttonUser' onClick={() => signOut({ callbackUrl: 'http://localhost:3000' })}>Sair</div>
+                     <div className ='buttonUser' onClick={() => signOut({ callbackUrl: 'http://localhost:3000' })}><p className = 'textLogin1'>Sair</p></div>
                    </div>                  
           </div>
           <div className = 'loginBoxItem'>
-           <div className ='loginBoxItemFilter'><p className ='textLogin'>Registro de Produtos</p></div>
-           <div className ='loginBoxItemFilter'><p className ='textLogin'>Historico de Registro</p></div>
+           <div className ='loginBoxItemFilter' onClick ={() =>{setShow(false)}}><p className ='textLogin'>Registro de Produtos</p></div>
+           <div className ='loginBoxItemFilter' onClick ={() =>{setShow(true)}}><p className ='textLogin'>Historico de Registro</p></div>
           </div>
           
           
@@ -106,7 +108,7 @@ const Login = () => {
            {setDescritivo}
            </div>       
            
-           <button  className = 'buttonUser' onClick = {() =>{
+           <button  className = 'buttonUser1' onClick = {() =>{
              if(username.length !== 0 && session.user.name !== 'funcionario'){
              console.log(username.length)
              setJobs({
@@ -118,36 +120,49 @@ const Login = () => {
                        
           </button>
           </div>
-          {(() => {
-           if (typeof produtos !== 'undefined') {
-                return ( 
-                  <div className = 'productList'>
-                  
-                  {produtos.map(({name,imageurl,price}) => (
-                   <div className = 'produtosBoxRegister'>
-                     <img className ='produtoImgRegister' src={imageurl} width={500} height={500} />
-                     <div className = 'contentRegister'>
-                     <p className = 'textRegister'> {'Produto:\t'+name} </p>
-                     <p className = 'textRegister'> {price} </p>
-                     </div>
-                     <div className = 'contentRegister'>
-                     <p className = 'textRegister'> {'Adicionado por:\t funcionario 1'} </p>
-                     <p className = 'textRegister'> {'Quantidade disponivel: 100'} </p>
-                     </div>
-                     </div>
-                     
-                             
-                  ))} 
-                  
-                  
-                  </div>
-           )}})()}  
         </div>
-
-        
-      </div>
-           
-    )
+      </div>         
+    )}else{
+      if(produtos)
+      return(
+        <div>
+          <div className ='login'>
+          <div className ='position'>
+          <div className = 'loginBox'>
+            <div className ='loginBoxHolder'>
+                     <div className = 'loginBoxImg'>                    
+                     </div>
+                     <div className = 'buttonUserBox'>
+                      Usuario: {session.user.name } <span className = 'OBS'>{'OBS: a conta Demo não tem permissão de registro para evitar depravação do APP'}</span>
+                     </div>
+                     <div className ='buttonUser' onClick={() => signOut({ callbackUrl: 'http://localhost:3000' })}><p className = 'textLogin1'>Sair</p></div>
+                   </div>                  
+          </div>
+          <div className = 'loginBoxItem'>
+           <div className ='loginBoxItemFilter' onClick ={() =>{setShow(false)}}><p className ='textLogin'>Registro de Produtos</p></div>
+           <div className ='loginBoxItemFilter' onClick ={() =>{setShow(true)}}><p className ='textLogin'>Historico de Registro</p></div>
+          </div>
+                 <div className = 'productList'>     
+                 {produtos.map(({name,imageurl,price}) => (
+                  <div className = 'produtosBoxRegister'>
+                    <img className ='produtoImgRegister' src={imageurl} width={500} height={500} />
+                    <div className = 'contentRegister'>
+                    <p className = 'textRegister'> {'Produto:\t'+name} </p>
+                    <p className = 'textRegister'> {price} </p>
+                    </div>
+                    <div className = 'contentRegister'>
+                    <p className = 'textRegister'> {'Adicionado por:\t funcionario 1'} </p>
+                    <p className = 'textRegister'> {'Quantidade disponivel: 100'} </p>
+                    </div>
+                    </div>               
+                 ))} 
+            
+                 </div>
+                 </div>
+                 </div>
+                 </div>     
+      )
+    }
   }
 
 
