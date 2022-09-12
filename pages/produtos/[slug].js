@@ -8,7 +8,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 
-const produtosSlug = () => {
+const ProdutosSlug = () => {
   
 
   const router =  useRouter()
@@ -111,4 +111,4 @@ useEffect(() => {
   )
 }
 
-export default produtosSlug
+export default ProdutosSlug
