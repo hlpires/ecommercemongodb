@@ -75,12 +75,14 @@ useEffect(() => {
           <div className= 'cartTittleBox'>
             <div className = 'art'></div>
             <h2>Carrinho</h2>
+            
             {(() => {
                if (typeof cartItens !== 'undefined' && cartItens !== null) {
                  return(
             <h6>{cartItens.length}</h6>
                  )}
-          })()} 
+          })()}
+          <div className = 'fechar' onClick = {onClose}></div>
           </div>
          
             <div>

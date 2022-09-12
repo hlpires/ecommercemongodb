@@ -7,7 +7,7 @@ const Carrousel = () => {
   
   
 const [cartItens,setCartItens] = useState([])
-
+const [settings,setSettings] = useState()
 
 const sendProdutos = (name,imageurl,price) =>{
   
@@ -39,19 +39,54 @@ function SamplePrevArrow(props) {
     />
   );
 }
-  
-const settings = {
+
+
+
+
+
+
+useEffect(() => {
+
+if(window.innerWidth>1350){
+setSettings({
     dots:false,
     infinite: true,
     speed: 500,
-    slidesToShow: 5,
+    slidesToShow: 4,
     slidesToScroll: 1,
     adaptiveHeight: true,
     autoplay: true,
     autoplaySpeed: 2000,
    
-  };
+  })}
+  else if(window.innerWidth<=1349 && window.innerWidth>=760){
+    setSettings({
+      dots:false,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      adaptiveHeight: true,
+      autoplay: true,
+      autoplaySpeed: 2000,
+     
+    })
 
+  }
+  else if(window.innerWidth<=759){
+    setSettings({
+      dots:false,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      adaptiveHeight: true,
+      autoplay: true,
+      autoplaySpeed: 2000,
+     
+    })
+  }
+}, []);
   
   useEffect(() => {
     fetch('/api/pegarproduto',{

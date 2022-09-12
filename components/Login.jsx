@@ -67,11 +67,11 @@ const Login = () => {
 }, []); 
 
 
-  const [username, usernameInput] = useInput({ placeholder: 'nome' });
-  const [preco, setPreco] = useInput({ placeholder: 'preco' });
-  const [imageurl, setImageurl] = useInput({ placeholder: 'imageurl' });
-  const [quantidadeDisp, setQuantidadeDisp] = useInput({ placeholder: 'quantidadeDisp' });
-  const [ descritivo, setDescritivo] = useInput({ placeholder: 'descritivo'});
+  const [username, usernameInput] = useInput({ placeholder: '\tNome' });
+  const [preco, setPreco] = useInput({ placeholder: '\tPreco' });
+  const [imageurl, setImageurl] = useInput({ placeholder: '\tImage,' });
+  const [quantidadeDisp, setQuantidadeDisp] = useInput({ placeholder: ' \tQuantidade' });
+  const [ descritivo, setDescritivo] = useInput({ placeholder: ' \tDescritivo'});
 
 
   if (session) {
@@ -142,17 +142,18 @@ const Login = () => {
            <div className ='loginBoxItemFilter' onClick ={() =>{setShow(false)}}><p className ='textLogin'>Registro de Produtos</p></div>
            <div className ='loginBoxItemFilter' onClick ={() =>{setShow(true)}}><p className ='textLogin'>Historico de Registro</p></div>
           </div>
+          <div className = 'registerTittleHandler'><p className ='registerTittle'>Historico de Registro</p></div>
                  <div className = 'productList'>     
                  {produtos.map(({name,imageurl,price}) => (
                   <div className = 'produtosBoxRegister'>
                     <img className ='produtoImgRegister' src={imageurl} width={500} height={500} />
                     <div className = 'contentRegister'>
-                    <p className = 'textRegister'> {'Produto:\t'+name} </p>
-                    <p className = 'textRegister'> {price} </p>
+                    <p className = 'textRegister'><span className ='textRegisterBolder'>{'Produto: '}</span> {name} </p>
+                    <p className = 'textRegister'><span className ='textRegisterBolder'>{'Preço: '}</span> {price} </p>
                     </div>
                     <div className = 'contentRegister'>
-                    <p className = 'textRegister'> {'Adicionado por:\t funcionario 1'} </p>
-                    <p className = 'textRegister'> {'Quantidade disponivel: 100'} </p>
+                    <p className = 'textRegister'><span className ='textRegisterBolder'>{'Adicionado por: '} </span>{'funcionario 1'} </p>
+                    <p className = 'textRegister'><span className ='textRegisterBolder'> {'Quantidade disponivel: '}</span>{'100'} </p>
                     </div>
                     </div>               
                  ))} 

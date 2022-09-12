@@ -74,12 +74,12 @@ const filtro = (letra) =>{
             </div>
             <div className = 'filterProductTittle'>Navegue por Categoria</div>
           <div className = 'subProductTittle'>Toda Joia conta uma Historia, escolha a sua</div>
-          <div className = 'styleProductTittle'></div>
+          <div className = 'styleProductTittle'></div> )
 
         {(() => {
            if (typeof produtosF !== 'undefined') {
                 return ( 
-                  <div>
+                  <div className = 'produstosHolder'>
                   
                   {produtosF.slice(0,8).map(({name,imageurl,price}) => (
                    <div className = 'produtosBox' onClick={() => sendProdutos(name,imageurl,price)}>

@@ -17,7 +17,7 @@ const Footer = () => {
               <div className ='menuBox'>
                   <a href = '/cart'><p className = 'menuBoxText'>Carrinho</p></a>
                   <a href = '/signin ' ><p className = 'menuBoxText'>Login</p></a>
-                 <div className ='footerButton' onClick ={scrollToTop}><p className = 'menuBoxText1'> Voltar</p></div>
+                 <div className ='footerButton' onClick ={scrollToTop}><p className = 'menuBoxText1'> </p></div>
               </div>
               <div className ='artBox'>
                 
