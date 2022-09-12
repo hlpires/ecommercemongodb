@@ -4,7 +4,7 @@ import Footer from '../components/Footer'
 import Bannerp from '../components/Bannerp'
 import getStripe from '../lib/stripe'
 
-const cart = () => {
+const Cart = () => {
 
 const [cartItens,setCartItens] = useState([])
 const [total,setTotal] = useState()
@@ -95,4 +95,4 @@ const handleCheckout = async () => {
   )
 }
 
-export default cart
+export default Cart
