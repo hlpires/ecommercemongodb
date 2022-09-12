@@ -145,7 +145,7 @@ const Login = () => {
           <div className = 'registerTittleHandler'><p className ='registerTittle'>Historico de Registro</p></div>
                  <div className = 'productList'>     
                  {produtos.map(({name,imageurl,price}) => (
-                  <div className = 'produtosBoxRegister'>
+                  <div key = {'1'} className = 'produtosBoxRegister'>
                     <img className ='produtoImgRegister' src={imageurl} width={500} height={500} />
                     <div className = 'contentRegister'>
                     <p className = 'textRegister'><span className ='textRegisterBolder'>{'Produto: '}</span> {name} </p>

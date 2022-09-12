@@ -1,14 +1,17 @@
 import React from 'react'
 import { useSession, signIn, signOut} from "next-auth/react"
+import Link from 'next/link'
+
+
 
 const Header = () => {
   return (
     <div className ='header'>
         <div className ='position'>
             <div className ='headerBox'>
-                  <a href="/"><div className = 'logo'></div></a>      
+                  <Link href="/"><div className = 'logo'></div></Link>      
                    <div className ='headerButtons' onClick={() => signIn('credentials',{redirect:true})} className = 'loginButton'></div>
-                   <a href= '/cart' className = 'carrinhoButton'></a>
+                   <Link href= '/cart' className = 'carrinhoButton'></Link>
               </div>
         </div>
     </div>

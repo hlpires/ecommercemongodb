@@ -82,7 +82,7 @@ const filtro = (letra) =>{
                   <div className = 'produstosHolder'>
                   
                   {produtosF.slice(0,8).map(({name,imageurl,price}) => (
-                   <div className = 'produtosBox' onClick={() => sendProdutos(name,imageurl,price)}>
+                   <div key = {'1'} className = 'produtosBox' onClick={() => sendProdutos(name,imageurl,price)}>
                      
                      <img className ='produtoImg' src={imageurl} width={500} height={500} />
                      <div className ='infoHolder'>
@@ -94,7 +94,7 @@ const filtro = (letra) =>{
                   ))} 
                   
                   {showMore && produtosF.slice(8).map(({name,imageurl,price}) => (
-                   <div className = 'produtosBox' onClick={() => sendProdutos(name,imageurl,price)}>
+                   <div key = {'1'}  className = 'produtosBox' onClick={() => sendProdutos(name,imageurl,price)}>
                      
                      <img className ='produtoImg' src={imageurl} width={500} height={500} />
                      <div className ='infoHolder'>
@@ -104,7 +104,7 @@ const filtro = (letra) =>{
                      <div className ='comprarProduto'><p className = 'text1'>Comprar</p></div>
                      </div>
                   ))}  
-                   <div style = {mystyle} className ='buttonBox'><button type="button" class="button" onClick={() =>{
+                   <div style = {mystyle} className ='buttonBox'><button type="button"  onClick={() =>{
                      setShowButton('none')
                      setShowMore(true)}}>Carregar mais </button></div>
                   </div>

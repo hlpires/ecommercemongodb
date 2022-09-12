@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 const Footer = () => {
 
@@ -15,8 +16,8 @@ const Footer = () => {
           <div className = 'footerBox'>
               <div className = 'pagueBox'></div>
               <div className ='menuBox'>
-                  <a href = '/cart'><p className = 'menuBoxText'>Carrinho</p></a>
-                  <a href = '/signin ' ><p className = 'menuBoxText'>Login</p></a>
+                  <Link href = '/cart'><p className = 'menuBoxText'>Carrinho</p></Link>
+                  <Link href = '/signin ' ><p className = 'menuBoxText'>Login</p></Link>
                  <div className ='footerButton' onClick ={scrollToTop}><p className = 'menuBoxText1'> </p></div>
               </div>
               <div className ='artBox'>

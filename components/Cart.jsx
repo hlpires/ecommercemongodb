@@ -93,7 +93,7 @@ useEffect(() => {
                   return ( 
                     <div>
                     {cartItens.slice(0, 4).map(({name,price,imageurl,numero}) => (
-                    <div className ='cartItemBox'>
+                    <div key = {'1'} className ='cartItemBox'>
                        <div className = 'imgCartBox'><img className = 'cartImage' src ={imageurl}></img></div>
                        <div className = 'itemCartBox'>
                          <p className = 'nameCartBox'> {name} </p>
@@ -113,7 +113,7 @@ useEffect(() => {
               return ( 
                 <div>
                 {cartItens.map(({name,price,imageurl,numero}) => (
-                <div className ='cartItemBox'>
+                <div key = {'1'} className ='cartItemBox'>
                    <div className = 'imgCartBox'><img className = 'cartImage' src ={imageurl}></img></div>
                    <div className = 'itemCartBox'>
                      <p className = 'nameCartBox'> {name} </p>

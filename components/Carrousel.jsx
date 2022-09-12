@@ -111,7 +111,7 @@ return (
           <div className = 'styleProductTittle'></div>
     <Slider {...settings}>
      {cartItens.map(({name,imageurl,price}) => (
-      <div style = {{ width: 300 }} className = 'produtosBoxCarrousel' onClick = {() => sendProdutos(name,imageurl,price)}>  
+      <div style = {{ width: 300 }} className = 'produtosBoxCarrousel' key = {'1'} onClick = {() => sendProdutos(name,imageurl,price)}>  
       <img className ='produtoImgCarrousel' src={imageurl} width={500} height={500} />
       <div className ='infoHolder'>
        <p className = 'textCarrousel'> {name} </p>
