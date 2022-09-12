@@ -11,7 +11,7 @@ const Header = () => {
             <div className ='headerBox'>
                   <Link href="/"><div className = 'logo'></div></Link>      
                    <div className ='headerButtons' onClick={() => signIn('credentials',{redirect:true})} className = 'loginButton'></div>
-                   <Link href="/"><div className = 'carrinhoButton'></div></Link>      
+                      
               </div>
         </div>
     </div>
