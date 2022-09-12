@@ -4,17 +4,15 @@ import getStripe from '../lib/stripe'
 const Cart = ({open,onClose,cartProps,onClear}) => {
 
 
-  const [apear,setApear] = useState()
-  const [total,setTotal] = useState()
-  const [result,setResult] = useState(0);
-  const mystyle = {
-    transform: apear
-  }
-  const [cartItens,setCartItens] = useState()
-
-if(open !== true){
-  return null
+const [apear,setApear] = useState()
+const [total,setTotal] = useState()
+const [result,setResult] = useState(0);
+const mystyle = {
+  transform: apear
 }
+const [cartItens,setCartItens] = useState()
+
+
 
 
 if(typeof cartProps !== 'undefined'){
@@ -22,6 +20,7 @@ if(typeof cartProps !== 'undefined'){
 }
 
 useEffect(() => {
+  
   if(cartProps){
     setCartItens(cartProps) 
   }
@@ -65,7 +64,9 @@ useEffect(() => {
   }, [total]);
 
   console.log(result)
-
+  if(open !== true){
+    return null
+  }
   return (
    
    
