@@ -70,7 +70,7 @@ const handleCheckout = async () => {
             </div>
             {cartItens.map(({name,imageurl,price}) => (
              <div className = 'cartPageBox'>  
-             <img className ='produtoImgCartPage' src={imageurl} width={500} height={500} />
+             <img className ='produtoImgCartPage' src={imageurl}/>
              <div className ='pageCartTextBox'>
              <p className = 'textPageCart' id = 'textPageCartName'> {name} </p>
              <p className = 'textPageCart'>R$ {price} </p>
