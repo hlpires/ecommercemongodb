@@ -104,7 +104,7 @@ const filtro = (letra) =>{
                      <div className ='comprarProduto'><p className = 'text1'>Comprar</p></div>
                      </div>
                   ))}  
-                   <div style = {mystyle} className ='buttonBox'><button type="button"  onClick={() =>{
+                   <div style = {mystyle} className ='buttonBox'><button type="button" className="button" onClick={() =>{
                      setShowButton('none')
                      setShowMore(true)}}>Carregar mais </button></div>
                   </div>
