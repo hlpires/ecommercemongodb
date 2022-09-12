@@ -1,7 +1,7 @@
 import React, {useState,useEffect} from 'react'
 import getStripe from '../lib/stripe'
 
-const cart = ({open,onClose,cartProps,onClear}) => {
+const Cart = ({open,onClose,cartProps,onClear}) => {
 
 if(open !== true){
   return null
@@ -13,7 +13,6 @@ const [result,setResult] = useState(0);
 const mystyle = {
   transform: apear
 }
-
 const [cartItens,setCartItens] = useState()
 
 
@@ -143,6 +142,6 @@ useEffect(() => {
   )
 }
 
-export default cart
+export default Cart
 
 
