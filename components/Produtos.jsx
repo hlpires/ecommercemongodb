@@ -72,9 +72,9 @@ const filtro = (letra) =>{
               <div className = 'itemName' onClick = {() =>{filtro('P')}}><p className ='filterText'  alt="" />Brincos</div>
               <div className = 'itemName' onClick = {() =>{filtro('B')}}><p className ='filterText'  alt="" />Colares</div>
             </div>
-            <div className = 'filterProductTittle'>Navegue por Categoria</div>
+            <div className = 'filterProductTittle'>Nossos Produtos</div>
           <div className = 'subProductTittle'>Toda Joia conta uma Historia, escolha a sua</div>
-          <div className = 'styleProductTittle'></div> )
+          <div className = 'styleProductTittle'></div> 
 
         {(() => {
            if (typeof produtosF !== 'undefined') {
