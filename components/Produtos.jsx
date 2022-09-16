@@ -61,10 +61,10 @@ const filtro = (letra) =>{
           <div className = 'subProductTittle'> Para cada tipo de ocasião uma jóia, apenas brilhe</div>
           <div className = 'styleProductTittle'></div>
         <div className = 'filterBox'>
-              <div className = 'filterItem' onClick = {() =>{filtro('A')}}><Image className ='filterText' src={pulseira} alt="" /></div>
-              <div className = 'filterItem' onClick = {() =>{filtro('C')}}><Image className ='filterText' src={aneis} alt="" /></div>
-              <div className = 'filterItem' onClick = {() =>{filtro('P')}}><Image className ='filterText' src={brinco} alt="" /></div>
-              <div className = 'filterItem' onClick = {() =>{filtro('B')}}><Image className ='filterText' id ='colares' src={colares} alt="" /></div>
+              <div className = 'filterItem' onClick = {() =>{filtro('P')}}><Image className ='filterText' src={pulseira} alt="" /></div>
+              <div className = 'filterItem' onClick = {() =>{filtro('A')}}><Image className ='filterText' src={aneis} alt="" /></div>
+              <div className = 'filterItem' onClick = {() =>{filtro('B')}}><Image className ='filterText' src={brinco} alt="" /></div>
+              <div className = 'filterItem' onClick = {() =>{filtro('C')}}><Image className ='filterText' id ='colares' src={colares} alt="" /></div>
             </div>
             <div className = 'itemNameBox'>
               <div className = 'itemName' onClick = {() =>{filtro('A')}}><p className ='filterText'  alt="" />Pulseiras</div>
