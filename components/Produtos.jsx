@@ -7,6 +7,9 @@ import brinco from '../img/brinco.png'
 import Image from 'next/image'
 import Carrousel from './Carrousel'
 
+
+
+
 const Produtos = () => {
 
 const [produtos,setProdutos] = useState()
@@ -14,10 +17,20 @@ const [produtosF,setProdutosF] = useState()
 const [showMore, setShowMore] = useState(false);
 const [showButton,setShowButton] = useState('');
 
+const scrollToTop = () => {
+  const documento = document.getElementsByClassName('produstosHolder')
+  const posicao = documento[0].offsetTop
 
+  window.scrollTo({
+    top: posicao-300,
+    behavior: 'smooth',
+    
+  });
+};
 const mystyle = {
 display:showButton
 }
+
 
 const sendProdutos = (name,imageurl,price) =>{
   
@@ -61,10 +74,11 @@ const filtro = (letra) =>{
           <div className = 'subProductTittle'> Para cada tipo de ocasião uma jóia, apenas brilhe</div>
           <div className = 'styleProductTittle'></div>
         <div className = 'filterBox'>
-              <div className = 'filterItem' onClick = {() =>{filtro('P')}}><Image className ='filterText' src={pulseira} alt="" /></div>
-              <div className = 'filterItem' onClick = {() =>{filtro('A')}}><Image className ='filterText' src={aneis} alt="" /></div>
-              <div className = 'filterItem' onClick = {() =>{filtro('B')}}><Image className ='filterText' src={brinco} alt="" /></div>
-              <div className = 'filterItem' onClick = {() =>{filtro('C')}}><Image className ='filterText' id ='colares' src={colares} alt="" /></div>
+         
+              <div className = 'filterItem' onClick = {() =>{filtro('P')}}><Image className ='filterText' onClick={scrollToTop} src={pulseira} alt="" /></div>
+              <div className = 'filterItem' onClick = {() =>{filtro('A')}}><Image className ='filterText' onClick={scrollToTop} src={aneis} alt="" /></div>
+              <div className = 'filterItem' onClick = {() =>{filtro('B')}}><Image className ='filterText' onClick={scrollToTop} src={brinco} alt="" /></div>
+              <div className = 'filterItem' onClick = {() =>{filtro('C')}}><Image className ='filterText' onClick={scrollToTop} id ='colares' src={colares} alt="" /></div>
             </div>
             <div className = 'itemNameBox'>
               <div className = 'itemName' onClick = {() =>{filtro('A')}}><p className ='filterText'  alt="" />Pulseiras</div>
