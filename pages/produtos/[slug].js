@@ -29,11 +29,17 @@ const ProdutosSlug = () => {
 
 
   const incNum = () => {
+   
     setNumero((prevQty) => prevQty + 1);
+   
   }
 
-  const decNum = () => { 
+  const decNum = () => {
+    if(!numero < 0){
     setNumero((prevQty) => prevQty - 1);
+    }else{
+      setNumero(1)
+    }
   }
   
   const adicionar = () =>{
