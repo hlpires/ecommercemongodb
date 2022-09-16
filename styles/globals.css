@@ -1300,6 +1300,7 @@ text-align: left;
     
    
   }
+  
   button{
     margin-top: 2%;
     margin-left:20%;
@@ -1908,7 +1909,7 @@ text-align: left;
     margin-left:0%;
     font-size: 22px;
     color: rgb(102, 102, 102);
-  
+    display: none;
   }
   .menuBoxText:hover{
     color: black;
@@ -1925,7 +1926,7 @@ text-align: left;
     text-align: center;
     float: left;
     clip-path: circle();
-    margin-top: -5%;
+  
     cursor: pointer;
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -3181,15 +3182,16 @@ display: none;
     margin-left:0%;
     font-size: 22px;
     color: rgb(102, 102, 102);
-  
+   overflow-y: hidden;
+   display: none;
   }
   .menuBoxText:hover{
     color: black;
   }
   
   .footerButton{
-    width: 15%;
-    margin-left: 42.5%;
+    width: 30%;
+    margin-left: 35%;
     height: 80%;
     background-image: url(../img/doublearrow.png);
     
@@ -3199,7 +3201,7 @@ display: none;
     text-align: center;
     float: left;
     clip-path: circle();
-    margin-top: -8%;
+    
     cursor: pointer;
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -3807,5 +3809,6 @@ display: none;
     .cartPageCheckoutButton:hover{
      transform: scale(1.02);
     }
+    
 }
   

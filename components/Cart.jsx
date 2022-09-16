@@ -89,7 +89,7 @@ useEffect(() => {
             <div>
 
             {(() => {
-               if (typeof cartItens !== 'undefined' && cartItens !== null && cartItens.length >= 4) {
+               if (typeof cartItens !== 'undefined' && cartItens !== null && cartItens.length > 0) {
                   return ( 
                     <div>
                     {cartItens.slice(0, 4).map(({name,price,imageurl,numero}) => (
@@ -109,7 +109,7 @@ useEffect(() => {
                         </div>             
                    </div>
                     </div>  
-             )}else if (typeof cartItens !== 'undefined' && cartItens !== null) {
+             )}else{
               return ( 
                 <div>
                 {cartItens.map(({name,price,imageurl,numero}) => (
