@@ -20,12 +20,8 @@ const [showButton,setShowButton] = useState('');
 const scrollToTop = () => {
   const documento = document.getElementsByClassName('produstosHolder')
   const posicao = documento[0].offsetTop
-
-  window.scrollTo({
-    top: posicao-300,
-    behavior: 'smooth',
-    
-  });
+  console.log(posicao)
+  window.scrollTo(0,posicao-200);
 };
 const mystyle = {
 display:showButton
