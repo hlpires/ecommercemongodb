@@ -73,7 +73,7 @@ const settings = {
 return (
    <div className = 'carrouselSlug'>
  <div className = 'filterProductTittle'>Aproveite</div>
-          <div className = 'subProductTittle'>Toda Joia conta uma Historia, escolha a sua</div>
+          <div className = 'subProductTittle'> Para cada tipo de ocasião uma jóia, apenas brilhe</div>
           <div className = 'styleProductTittle'></div>
     <Slider {...settings}>
      {cartItens.map(({name,imageurl,price}) => (

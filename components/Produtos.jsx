@@ -58,7 +58,7 @@ const filtro = (letra) =>{
     <div className = 'produtos'>
         <div className = 'position'>
           <div className = 'filterProductTittle'>Navegue por Categoria</div>
-          <div className = 'subProductTittle'>Toda Joia conta uma Historia, escolha a sua</div>
+          <div className = 'subProductTittle'> Para cada tipo de ocasião uma jóia, apenas brilhe</div>
           <div className = 'styleProductTittle'></div>
         <div className = 'filterBox'>
               <div className = 'filterItem' onClick = {() =>{filtro('A')}}><Image className ='filterText' src={pulseira} alt="" /></div>
@@ -73,7 +73,7 @@ const filtro = (letra) =>{
               <div className = 'itemName' onClick = {() =>{filtro('B')}}><p className ='filterText'  alt="" />Colares</div>
             </div>
             <div className = 'filterProductTittle'>Nossos Produtos</div>
-          <div className = 'subProductTittle'>Toda Joia conta uma Historia, escolha a sua</div>
+          <div className = 'subProductTittle'> Para cada tipo de ocasião uma jóia, apenas brilhe</div>
           <div className = 'styleProductTittle'></div> 
 
         {(() => {
