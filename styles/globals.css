@@ -2748,7 +2748,7 @@ display: none;
     min-width: 100px;
     display: none;
   }
-  
+
 
   .carrinhoButton{
     margin-top: 3vh;
@@ -2767,7 +2767,7 @@ display: none;
   .slugBox{
     width: 100%;
     margin-top: 0%;
-    height:1200px;
+    height:800px;
     display: block;
     
   }
@@ -2780,7 +2780,7 @@ display: none;
   .imageBox{
     
     margin-left: 10%;
-    height: 45%;
+    height: 50%;
     overflow-y: hidden;
     width: 80%;
   }
@@ -2795,7 +2795,7 @@ display: none;
   font-weight: bolder;
   
   }
- button 
+
   .slugArt{
     width: 100%;
     margin-left: 0%;
@@ -2822,12 +2822,13 @@ display: none;
     margin-left: 10%;
     height: 100%;
     align-self: center;
+    
   }
   
   .quantidadeBox{
-    width: 30%;
+    width: 40%;
     height: 10%;
-    margin-left:10%;
+    margin-left:15%;
     border: 2px solid rgb(209, 209, 209);
     display: flex;
     align-self: center;
@@ -2868,9 +2869,9 @@ display: none;
     height: 38px;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin-left: 0%;
-    font-size:22px;
+    font-size:18px;
     padding-top: 6px;
-    width: 30%;
+    width: 40%;
     text-align: center;
     font-weight: bolder;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
@@ -2882,7 +2883,7 @@ display: none;
     .comprarButton{
       margin-top: 10%;
       margin-left: 0%;
-      width: 60%;
+      width: 100%;
       height: 80px;
       background-color: black;
       color: white;
@@ -3503,7 +3504,7 @@ display: none;
    font-size: calc(15px);
    margin-bottom: 6%;
    }
-  .
+  
   .filterBox{
     width: 90vw;
     margin-left: 5vw;
