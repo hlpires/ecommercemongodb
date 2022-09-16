@@ -21,7 +21,7 @@ const scrollToTop = () => {
   const documento = document.getElementsByClassName('produstosHolder')
   const posicao = documento[0].offsetTop
   console.log(posicao)
-  window.scrollTo(0,posicao-200);
+ setTimeout( function(){window.scrollTo(0,posicao-200);},200)
 };
 const mystyle = {
 display:showButton
