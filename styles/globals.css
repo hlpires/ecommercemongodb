@@ -2966,6 +2966,7 @@ display: none;
      background-repeat: no-repeat;
 
    }
+   
     .cartItemBox{
       display: flex;
       border-bottom: 2px solid #e3e3e3;
@@ -3093,7 +3094,7 @@ display: none;
     .paymentText{
       margin-top: 2%;
       width: 40%;
-      font-size: 20px;
+      font-size: 18px;
       font-family:Arial, Helvetica, sans-serif;
       margin-left: 10%;
       height: 40%;
