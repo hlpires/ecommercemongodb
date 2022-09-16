@@ -60,8 +60,12 @@ const filtro = (letra) =>{
   setProdutosF(produtos.filter(({name}) => name.startsWith(letra)))
 }
 
-
-
+useEffect(() => {
+  if(produtosF)
+if(produtosF.length<5){
+setShowButton('none')
+}
+}, [produtosF]);
 
   return (
     <div className = 'produtos'>
