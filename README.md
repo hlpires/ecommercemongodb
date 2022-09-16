@@ -1,6 +1,7 @@
 #Safire
 
-![cslogobc](https://user-images.githubusercontent.com/60366579/190817218-cfea04ea-7007-4aa1-884d-a115bba5f0f6.png)
+![banner1](https://user-images.githubusercontent.com/60366579/190824299-62343bd3-25e4-4523-b509-9f93a6be0da9.png)
+
 
 
 •	Sistema de autenticação de credenciais utilizando MongoDb e Next Auth, permitindo usuário autenticado inserir novos produtos
