@@ -84,15 +84,15 @@ useEffect(() => {
                if (typeof cartItens !== 'undefined' && cartItens !== null && cartItens.length > 0) {
                   return ( 
                     <div>
-                    {cartItens.slice(0, 4).map(({name,price,imageurl,numero}) => (
+                    {cartItens.slice(0, 4).map(({name,price,imageurl,numero,id}) => (
                     <div key = {'1'} className ='cartItemBox'>
                        <div className = 'imgCartBox'><img className = 'cartImage' src ={imageurl}></img></div>
                        <div className = 'itemCartBox'>
                          <p className = 'nameCartBox'> {name} </p>
                          <p className = 'quantidadeCartBox'> {'Quantidade ' + numero} </p>
                          <div className = 'priceCartBox'><p className ='priceCartText'> {'R$ ' + price * numero}</p> </div>
-                         <div className = 'priceCartBox' onClick = {()=>removeItem(name)}></div>
-                        </div>                                  
+                        </div>
+                        <div className = 'removeItemCart' onClick = {()=>removeItem(id)}></div>                                
                     </div> 
                    ))}
                    <div className ='cartItemBox'>

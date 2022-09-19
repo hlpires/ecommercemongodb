@@ -6,7 +6,7 @@ import Footer from '../../components/Footer'
 import CarrouselSlug from '../../components/CarrouselSlug'
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-
+import { v4 as uuid} from 'uuid';
 
 const ProdutosSlug = () => {
   
@@ -18,6 +18,7 @@ const ProdutosSlug = () => {
   const [cartData,setCartData] = useState([])
   const [dataJson,setDataJson] = useState()
   const [passData,setPassData] = useState()
+  const id = uuid();
 
   useEffect(() => {
     const data = JSON.parse(window.localStorage.getItem('cartitens'));
@@ -44,7 +45,7 @@ const ProdutosSlug = () => {
   
   const adicionar = () =>{
     setCartData((prevState) => ([
-      {name,imageurl,price,numero},
+      {name,imageurl,price,numero,id},
       ...prevState
       
       ]));
@@ -61,28 +62,24 @@ setPassData([...dataJson,...cartData])
   }
 }, [cartData]);
 
-
-
-
-const removeItem = (id) => {
-  const index = passData.findIndex(prod => prod.name === id); //use id instead of index
-  if (index > -1) { //make sure you found it    
-    setPassData(prevState => prevState.splice(index, 1))
-    setCartData(prevState => prevState.splice(index, 1))
-    setDataJson(prevState => prevState.splice(index, 1))
-  } 
-}
-
 useEffect(() => {
   if(passData !== undefined){
     window.localStorage.setItem('cartitens',JSON.stringify(passData))
-    console.log(passData)
+   
   }
   
 }, [passData])
 
 
-console.log(cartData)
+
+const removeItem = (id) => {
+   
+    setCartData((state) => state.filter((item) => item.id !== id))
+    setDataJson((state) => state.filter((item) => item.id !== id))
+}
+
+
+
   return (
 
     
@@ -109,6 +106,7 @@ console.log(cartData)
                </div>
            </div>
            <div className = 'comprarButton' onClick = {adicionar}><h4>Adicionar a Sacola</h4></div>
+           
            <CarrouselSlug/>
            </div>
            </div>
@@ -119,7 +117,6 @@ console.log(cartData)
        </div>
       </div>
       <Cart open={cart} cartProps={passData} removeItem ={removeItem} onClear = {() => {
-        setPassData([])
         setCartData([])
         setDataJson([])
         }} onClose={() => setCart(false)}/>

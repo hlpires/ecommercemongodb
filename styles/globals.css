@@ -50,6 +50,7 @@ input{
   
  
 }
+
 button{
   margin-top: 2%;
   margin-left:20%;
@@ -455,11 +456,25 @@ background-size: 100% 120%;
     margin-left: 10%; 
     color: black;
     background-color: #5099f8;
-    width: 25%;
+    width: 35%;
     height: 30%;
     color: white;
     text-align: center;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  }
+
+  .removeItemCart{
+    
+    margin-right: 10%;
+    align-self: center; 
+    color: black;
+    background-image: url(../img/x.png);
+    background-size: 100% 100%;
+    width: 6%;
+    height: 20%;
+    color: white;
+    text-align: center;
+    cursor: pointer;
   }
   .priceCartText{
    padding-top: 7px;
@@ -470,10 +485,10 @@ background-size: 100% 120%;
     margin-top: 4%;
     margin-left: 10%; 
     color: black;
-    width: 30%;
+    width: 100%;
   }
   .itemCartBox{
-    width: 70%;
+    width: 60%;
     height: 100px;
     display: block;
     margin-top: 15px;
@@ -1278,6 +1293,20 @@ text-align: left;
 }
 
 @media (min-width: 760px) and (max-width:1349px){ 
+
+  .removeItemCart{
+    
+    margin-right: 10%;
+    align-self: center; 
+    color: black;
+    background-image: url(../img/x.png);
+    background-size: 100% 100%;
+    width: 6%;
+    height: 20%;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+  }
   .login{
     margin-bottom: 4%;
     width: 100vw;
@@ -2539,6 +2568,21 @@ text-align: left;
 }
 
 @media (max-width:759px){ 
+
+
+  .removeItemCart{
+    margin-top: -4%;
+    margin-right: 10%;
+    align-self: center; 
+    color: black;
+    background-image: url(../img/x.png);
+    background-size: 100% 100%;
+    width: 6%;
+    height: 20%;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+  }  
   .login{
     margin-bottom: 4%;
     width: 100vw;
@@ -3010,6 +3054,7 @@ display: none;
       margin-left: 0%; 
       color: black;
       width: 45%;
+      display: none;
     }
     .itemCartBox{
       width: 70%;
