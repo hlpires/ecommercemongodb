@@ -17,7 +17,6 @@ export default async function handler(req,res) {
             mode: 'payment',
             payment_method_types: ['card'],
             billing_address_collection: 'auto',
-
             line_items: req.body.map((item)=> {
 
               
