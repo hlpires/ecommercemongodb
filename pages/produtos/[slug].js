@@ -61,17 +61,28 @@ setPassData([...dataJson,...cartData])
   }
 }, [cartData]);
 
+
+
+
+const removeItem = (id) => {
+  const index = passData.findIndex(prod => prod.name === id); //use id instead of index
+  if (index > -1) { //make sure you found it    
+    setPassData(prevState => prevState.splice(index, 1))
+    setCartData(prevState => prevState.splice(index, 1))
+    setDataJson(prevState => prevState.splice(index, 1))
+  } 
+}
+
 useEffect(() => {
   if(passData !== undefined){
     window.localStorage.setItem('cartitens',JSON.stringify(passData))
- 
+    console.log(passData)
   }
   
 }, [passData])
 
 
-
-
+console.log(cartData)
   return (
 
     
@@ -107,7 +118,7 @@ useEffect(() => {
               
        </div>
       </div>
-      <Cart open={cart} cartProps={passData} onClear = {() => {
+      <Cart open={cart} cartProps={passData} removeItem ={removeItem} onClear = {() => {
         setPassData([])
         setCartData([])
         setDataJson([])

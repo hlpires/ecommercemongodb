@@ -57,7 +57,7 @@ const handleCheckout = async () => {
   return (
     <div>
         <Header/>
-        <Bannerp/>
+        
         <div className = 'cartPage'>
             <div className ='position'>           
             <div className = 'cartPageTittle' style = {{borderBottomColor:'transparent'}}>Carrinho</div>

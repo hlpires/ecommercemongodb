@@ -1,7 +1,7 @@
 import React, {useState,useEffect} from 'react'
 import getStripe from '../lib/stripe'
 
-const Cart = ({open,onClose,cartProps,onClear}) => {
+const Cart = ({open,onClose,cartProps,onClear,removeItem}) => {
 
 
 const [apear,setApear] = useState()
@@ -11,13 +11,6 @@ const mystyle = {
   transform: apear
 }
 const [cartItens,setCartItens] = useState()
-
-
-
-
-if(typeof cartProps !== 'undefined'){
-
-}
 
 useEffect(() => {
   
@@ -63,7 +56,6 @@ useEffect(() => {
         setResult(total.reduce((totalp, currentvalue) => totalp = totalp + currentvalue,0))
   }, [total]);
 
-  console.log(result)
   if(open !== true){
     return null
   }
@@ -99,6 +91,7 @@ useEffect(() => {
                          <p className = 'nameCartBox'> {name} </p>
                          <p className = 'quantidadeCartBox'> {'Quantidade ' + numero} </p>
                          <div className = 'priceCartBox'><p className ='priceCartText'> {'R$ ' + price * numero}</p> </div>
+                         <div className = 'priceCartBox' onClick = {()=>removeItem(name)}></div>
                         </div>                                  
                     </div> 
                    ))}
