@@ -6,7 +6,10 @@ const Cart = ({open,onClose,cartProps,onClear,removeItem}) => {
 
 const [apear,setApear] = useState()
 const [total,setTotal] = useState()
+const [qtotal,setQtotal] = useState()
 const [result,setResult] = useState(0);
+const [qresult,setQresult] = useState(0);
+
 const mystyle = {
   transform: apear
 }
@@ -47,6 +50,7 @@ const handleCheckout = async () => {
 useEffect(() => {
   if(typeof cartItens !== 'undefined')
   setTotal(cartItens.map(cart => Number(cart.price)*cart.numero))
+  setQtotal(cartItens.map(cart => cart.numero))
   }, [cartItens]);
   
   
@@ -56,6 +60,11 @@ useEffect(() => {
         setResult(total.reduce((totalp, currentvalue) => totalp = totalp + currentvalue,0))
   }, [total]);
 
+  useEffect(() => {
+    if(typeof qtotal !== 'undefined' )
+        setQresult(qtotal.reduce((previousValue, currentValue) => previousValue + currentValue,0))
+  }, [qtotal]);
+  
   if(open !== true){
     return null
   }
@@ -98,7 +107,7 @@ useEffect(() => {
                    <div className ='cartItemBox'>
                    <div className = 'imgCartBox'></div>
                        <div className = 'itemCartBox'>
-                         <p className = 'nameCartBox'> {'Carrinho com total de: ' + cartItens.length+ ' itens'} </p>
+                         <p className = 'nameCartBox'> {'Carrinho com total de: ' + qresult + ' itens'} </p>
                         </div>             
                    </div>
                     </div>  

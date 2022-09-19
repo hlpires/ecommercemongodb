@@ -8,7 +8,9 @@ const Cart = () => {
 
 const [cartItens,setCartItens] = useState([])
 const [total,setTotal] = useState()
+const [qtotal,setQtotal] = useState()
 const [result,setResult] = useState(0);
+const [qresult,setQresult] = useState(0);
 
 useEffect(() => {
     const data = JSON.parse(window.localStorage.getItem('cartitens'));
@@ -21,19 +23,30 @@ useEffect(() => {
 
 
 useEffect(() => {
-  if(typeof cartItens !== 'undefined')
+  if(typeof cartItens !== 'undefined'){
   setTotal(cartItens.map(cart => Number(cart.price)*cart.numero))
+  setQtotal(cartItens.map(cart => cart.numero))
+  }
+  if(cartItens.length !== 0){
+    window.localStorage.setItem('cartitens',JSON.stringify(cartItens))
+  }
+  
   }, [cartItens]);
   
-  
+
   
   useEffect(() => {
-    if(typeof total !== 'undefined')
+    if(typeof total !== 'undefined' )
         setResult(total.reduce((totalp, currentvalue) => totalp = totalp + currentvalue,0))
   }, [total]);
 
-  console.log(result)
 
+  useEffect(() => {
+    if(typeof qtotal !== 'undefined' )
+        setQresult(qtotal.reduce((previousValue, currentValue) => previousValue + currentValue,0))
+  }, [qtotal]);
+
+console.log(qresult)
 const handleCheckout = async () => {
   
   const stripe = await getStripe();
@@ -53,6 +66,13 @@ const handleCheckout = async () => {
   
 }
 
+const removeItem = (id) => {
+   
+  setCartItens((state) => state.filter((item) => item.id !== id))
+
+}
+
+
     
   return (
     <div>
@@ -68,7 +88,7 @@ const handleCheckout = async () => {
             <p className = 'textPageCartTittle'> Preço </p>
             <p className = 'textPageCartTittle'> Quantidade </p>
             </div>
-            {cartItens.map(({name,imageurl,price,numero}) => (
+            {cartItens.map(({name,imageurl,price,numero,id}) => (
              <div className = 'cartPageBox' key={'1'}>  
              <img className ='produtoImgCartPage' src={imageurl}/>
              <div className ='pageCartTextBox'>
@@ -76,12 +96,13 @@ const handleCheckout = async () => {
              <p className = 'textPageCart'>R$ {price} </p>
              <p className = 'textPageCart'>{numero} </p>
              </div>
+             <div className = 'removeItemCartPage' onClick = {()=>removeItem(id)}></div> 
         </div>      
      ))}
        </div>  
         <div className = 'cartPageCheckoutBox'>
           <div className ='cartPageCheckoutTittle'>Pagamento</div>
-          <div className ='cartPageCheckoutText'>{'Quantidade de itens:'+'\t'+ cartItens.length}</div>
+          <div className ='cartPageCheckoutText'>{'Quantidade de itens:'+'\t'+ qtotal}</div>
           <div className ='cartPageCheckoutText'>{'Total:'+'\t'+ result}</div>
           <div className ='cartPageCheckoutButton' onClick ={handleCheckout}>Comprar</div>
         </div>
