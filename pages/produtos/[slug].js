@@ -105,7 +105,7 @@ const removeItem = (id) => {
                 <div className ='counter'  id ='counter2' onClick = {incNum}></div>
                </div>
            </div>
-           <div className = 'comprarButton' onClick = {adicionar}><h4>Adicionar a Sacola</h4></div>
+           <div className = 'comprarButton' onClick = {adicionar}><h4>Adicionar ao carrinho</h4></div>
            
            <CarrouselSlug/>
            </div>
