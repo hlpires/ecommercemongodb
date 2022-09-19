@@ -102,7 +102,7 @@ const removeItem = (id) => {
        </div>  
         <div className = 'cartPageCheckoutBox'>
           <div className ='cartPageCheckoutTittle'>Pagamento</div>
-          <div className ='cartPageCheckoutText'>{'Quantidade de itens:'+'\t'+ qtotal}</div>
+          <div className ='cartPageCheckoutText'>{'Quantidade de itens:'+'\t'+ qresult}</div>
           <div className ='cartPageCheckoutText'>{'Total:'+'\t'+ result}</div>
           <div className ='cartPageCheckoutButton' onClick ={handleCheckout}>Comprar</div>
         </div>
