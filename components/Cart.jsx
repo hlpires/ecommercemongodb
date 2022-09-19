@@ -48,9 +48,10 @@ const handleCheckout = async () => {
   
 }
 useEffect(() => {
-  if(typeof cartItens !== 'undefined')
+  if(typeof cartItens !== 'undefined'){
   setTotal(cartItens.map(cart => Number(cart.price)*cart.numero))
   setQtotal(cartItens.map(cart => cart.numero))
+  }
   }, [cartItens]);
   
   
