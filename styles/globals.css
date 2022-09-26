@@ -24,7 +24,7 @@ a {
   src: url(../fonts/Aboreto-Regular.ttf)
 }
 
-@media (min-width: 1350px){ 
+@media (min-width: 1001px){ 
 .login{
   margin-bottom: 4%;
   width: 100vw;
@@ -1305,7 +1305,7 @@ text-align: left;
   }
 }
 
-@media (min-width: 760px) and (max-width:1349px){ 
+@media (min-width: 760px) and (max-width:1000px){ 
 
   .login{
     margin-bottom: 4%;
