@@ -136,7 +136,7 @@ useEffect(() => {
              
             </div>
             <div className= 'cartTittleBox'>
-            <div className = 'paymentButton' onClick = {clear} ><p onClick ={onClear} className = 'comprarText'>Remover Itens</p></div> 
+            <div className = 'paymentButton' onClick = {clear} ><p onClick ={onClear} className = 'comprarText'>Remover </p></div> 
           </div> 
           <div className= 'cartTittleBox'>
             <div className = 'paymentButton' onClick = {handleCheckout}><p className = 'comprarText'>Comprar</p></div>
