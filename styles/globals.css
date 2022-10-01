@@ -78,9 +78,10 @@ button{
   background-image: url(../img/bannercredit.png);
   border-bottom: 1px solid rgb(172, 170, 170);
 }
+
 .bannerBox{
   width: 100%;
-  height: 35vh;
+  height: 38vh;
   max-height: 700px;
   display: flex;
   justify-content: center;
@@ -1314,6 +1315,7 @@ text-align: left;
     display: flex;
     height: 45vh;
     max-height: 700px;
+    filter: brightness(90%);
   }
   .paralaxBox{
     height: 100%;
