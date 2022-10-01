@@ -106,6 +106,7 @@ setSettings({
 
 return (
    <div className = 'carrousel'>
+     <div className = 'position'>
  <div className = 'filterProductTittle'>Aproveite</div>
           <div className = 'subProductTittle'>T Para cada tipo de ocasião uma jóia, apenas brilhe</div>
           <div className = 'styleProductTittle'></div>
@@ -122,6 +123,7 @@ return (
         </div>        
      ))}
     </Slider> 
+    </div>
    </div>
   )
 }

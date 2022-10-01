@@ -6,7 +6,7 @@ import colares from '../img/colares.png'
 import brinco from '../img/brinco.png'
 import Image from 'next/image'
 import Carrousel from './Carrousel'
-
+import Paralax from '../components/Paralax'
 
 
 
@@ -126,10 +126,12 @@ const Produtos = () => {
             )
           }
         })()}
-        <Carrousel />
+     
+       
       </div>
 
     </div>
+    
   )
 }
 

@@ -35,8 +35,8 @@ a {
 }
 
 .position{
-  width: 1500px;
- 
+  width: 90vw;
+  max-width: 2000px;
   overflow-y: hidden;
   display: block;
   justify-content: center;
@@ -81,7 +81,7 @@ button{
 .bannerBox{
   width: 100%;
   height: 35vh;
- 
+  max-height: 700px;
   display: flex;
   justify-content: center;
  
@@ -190,6 +190,7 @@ transform: scale(1.03);
 transition: 0.5s;
 
 }
+
 .header{
   justify-content: center;
   display: flex;
@@ -615,7 +616,7 @@ height: 100%;
     
   }
 .footer{
-
+ overflow-y: hidden;
   margin-top: 120px;
   display: flex;
   justify-content: center;
@@ -626,7 +627,7 @@ height: 100%;
 
 .footerBox{
   height: 400px;
-
+  overflow-y: hidden;
   width: 100%;
   justify-content: center;
 }
@@ -1041,15 +1042,19 @@ border: 1px solid black;
   font-size: 20px;
 
 }
+
 .filterText{
   align-self: center;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-weight: bolder;
   font-size: 18px;
 }
+
 .carrousel{
-  width: 96%;
-  margin-left: 1%;
+  width: 86%;
+  justify-content: center;
+  display: flex;
+  margin-left: 7%;
  margin-top: 2%;
 }
 .carrouselButton{
@@ -1303,6 +1308,25 @@ text-align: left;
   .cartPageCheckoutButton:hover{
    transform: scale(1.02);
   }
+  .paralax{
+    margin-top: 5%;
+    justify-content: center;
+    display: flex;
+    height: 45vh;
+    max-height: 700px;
+  }
+  .paralaxBox{
+    height: 100%;
+    width: 100%;
+    
+    display: flex;
+  }
+  .paralaxBox1{
+
+ width: 100vw;
+
+  }
+
 }
 
 @media (min-width: 760px) and (max-width:1000px){ 
@@ -2326,6 +2350,7 @@ text-align: left;
     width: 96%;
     margin-left: 1%;
    margin-top: 2%;
+   display: none;
   }
   .carrouselButton{
     width: 200px;
@@ -3624,9 +3649,10 @@ display: none;
     font-size: 18px;
   }
   .carrousel{
-    width: 90vw;
-    margin-left: 5vw;
+    width: 80vw;
+    margin-left: 10vw;
    margin-top: 2%;
+   display: none;
   }
   .carrouselButton{
     width: 200px;
