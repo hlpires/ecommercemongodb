@@ -51,6 +51,7 @@ input{
  
 }
 
+
 button{
   margin-top: 2%;
   margin-left:20%;
@@ -66,7 +67,9 @@ button{
   justify-content: center;
   background-size: 100% 140%;
   background-repeat: no-repeat;
-  background-image: url(../img/banner1.png);
+  height: 38vh;
+  max-height: 600px;
+ background-color: #a3d4e2;
   border-bottom: 1px solid rgb(172, 170, 170);
 }
 .bannerp{
@@ -80,13 +83,17 @@ button{
 }
 
 .bannerBox{
+  background-image: url(../img/banner1.png);
   width: 100%;
-  height: 38vh;
-  max-height: 700px;
+  height: 100%;
+  max-width: 2000px;
+  background-repeat: no-repeat;
+  background-size: 100% 140%;
   display: flex;
   justify-content: center;
  
 }
+
 .bannerBox1{
   width: 100%;
   height: 25vh;
@@ -111,7 +118,7 @@ h3{
 .produtosBox{
   margin-top: 2%;
   width: 22%;
-  margin-left: 2%;
+  margin-left: 2.5%;
   height: 400px;
   float: left;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
@@ -120,6 +127,7 @@ h3{
   overflow-y:hidden;
   margin-bottom: 5%;
 }
+
 .produtosBox:hover .infoHolder{
 
 display: none;
@@ -176,7 +184,7 @@ transition: 0.2s;
 }
 
 .button{
-  margin-left: 38.5%;
+  margin-left: 39.8%;
   width: 20%;
   height: 60px;
   background-color: black;
@@ -185,6 +193,7 @@ transition: 0.2s;
   font-size: 20px;
   font-weight: bold;
 }
+
 .button:hover{
 
 transform: scale(1.03);
@@ -674,9 +683,10 @@ height: 100%;
   color: black;
 }
 
+
 .footerButton{
 width: 10%;
-margin-left: 47.5%;
+margin-left: 46%;
 height: 80%;
 background-image: url(../img/doublearrow.png);
 
@@ -967,7 +977,9 @@ margin-left: 5%;
  margin-top: 5%;
  font-weight:bold;
  font-size: calc(25px);
+
 }
+
 .subProductTittle{
   text-align: center;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -989,9 +1001,9 @@ margin-left: 5%;
 .filterBox{
   width: 80%;
   margin-left: 10%;
+ 
   height: 250px;
   margin-top: 2%;
-
   display: flex;
   
 }
@@ -1006,7 +1018,7 @@ border: 1px solid black;
   height: 80%;
   cursor: pointer;
   float: left;
-  margin-left: 4.5%;
+  margin-left: 4.1%;
   display: flex;
   justify-content: center;
   background-color:white ;
@@ -1035,7 +1047,7 @@ border: 1px solid black;
   height: 80%;
   cursor: pointer;
   float: left;
-  margin-left: 4.5%;
+  margin-left: 4.1%;
   display: flex;
   justify-content: center;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -1220,6 +1232,7 @@ text-align: left;
   display: flex;
 }
 
+
 .textPageCartTittle{
   align-self: center;
   float: left;
@@ -1309,24 +1322,45 @@ text-align: left;
   .cartPageCheckoutButton:hover{
    transform: scale(1.02);
   }
+  
   .paralax{
     margin-top: 5%;
     justify-content: center;
     display: flex;
-    height: 45vh;
+    height: 55vh;
     max-height: 700px;
-    filter: brightness(90%);
+
+    background-color: #ffd7a9;
+    
   }
+
+  
   .paralaxBox{
     height: 100%;
     width: 100%;
-    
+    justify-content: center;
     display: flex;
+    background-image: url(//live.staticflickr.com/65535/52396469814_c971084db8_h.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 110%;
+   
+    transition: 1.5s;
   }
-  .paralaxBox1{
+  .hiden{
+    width: 100%;
+    height: 10%;
 
- width: 100vw;
+    position: absolute;
+    
+    background-color: rgb(255, 255, 255);
+  }
+  .hidenBot{
+    bottom: 0%;
+    width: 100%;
+    height: 10%;
 
+    background-color: rgb(255, 255, 255);
+    position: absolute;
   }
 
 }

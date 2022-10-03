@@ -1,17 +1,45 @@
-import React from 'react'
-import { Parallax } from 'react-parallax';
-import image from '../img/banner.png'
+import React,{useState,useEffect} from 'react'
+
+
 
 const Paralax = () => {
+
+const [valor,setvalor] = useState()
+const [scroll,setScroll] = useState()
+
+ const myStyle = {
+    backgroundPositionY: valor
+}
+
+useEffect(() => {
+    const interval = setInterval(() => {
+      setScroll(window.scrollY);
+      console.log(document.getElementsByClassName('button')?.[0].offsetTop)
+    }, 500);
+    return () => clearInterval(interval);
+  }, []);
+
+
+ useEffect(() => {
+if(typeof document.getElementsByClassName('button')?.[0] !== 'undefined')
+
+    if(scroll >= document.getElementsByClassName('button')?.[0].offsetTop - 400){
+        setvalor('50px')   
+    }else{
+        setvalor('0px')  
+    }
+  
+}, [scroll]);
+
     return (
         <div className='paralax'>
-           
-                <div className='paralaxBox'>                
-                    <Parallax blur={0} bgClassName = 'paralaxImg' bgImage={"//live.staticflickr.com/65535/52396469814_c971084db8_h.jpg"} bgImageAlt="the cat" strength={200}>
-                        <div className = 'paralaxBox1'></div>
-                    </Parallax>
+           <div className = 'position'>
+                <div style= {myStyle} className='paralaxBox'>
+                    <div className = 'hiden' ></div>
+
+                    <div className = 'hidenBot'></div>       
                 </div>
-         
+            </div>
         </div>
     )
 }
