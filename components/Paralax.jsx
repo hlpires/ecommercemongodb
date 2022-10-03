@@ -24,7 +24,7 @@ useEffect(() => {
 if(typeof document.getElementsByClassName('button')?.[0] !== 'undefined')
 
     if(scroll >= document.getElementsByClassName('button')?.[0].offsetTop - 400){
-        setvalor('50px')   
+        setvalor('30px')   
     }else{
         setvalor('0px')  
     }
