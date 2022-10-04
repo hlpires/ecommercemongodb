@@ -12,11 +12,13 @@ const [scroll,setScroll] = useState()
 }
 
 useEffect(() => {
+    if(document.getElementsByClassName('button')?.[0]){
     const interval = setInterval(() => {
       setScroll(window.scrollY);
       console.log(document.getElementsByClassName('button')?.[0].offsetTop)
     }, 500);
     return () => clearInterval(interval);
+}
   }, []);
 
 
