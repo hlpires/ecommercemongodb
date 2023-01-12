@@ -12,7 +12,6 @@ export default function Home() {
   <Header/>
   <Banner/>
   <Produtos/>
-  <Paralax/>
   <Carrousel />
   <Footer/>
   </div> 

@@ -207,7 +207,7 @@ transition: 0.5s;
   height: 100px;
   width: 100%;
   
-  border-bottom: 1px solid rgb(172, 170, 170);
+
 }
 
 .headerBox{
@@ -224,7 +224,7 @@ margin-top:0%;
 height: 100%;
 width: 23%;
 background-image: url(../img/cslogobc.png);
-background-size: 100% 100%;
+background-size: 100% 120%;
 cursor: pointer;
 float: left;
 margin-left: 40%;
@@ -643,11 +643,12 @@ height: 100%;
 }
 .pagueBox{
   margin-top: 2%;
-  margin-left: -4%;
-  width: 30%;
-  height: 30%;
+  margin-left: -3%;
+  width: 25%;
+  height: 25%;
   background-image: url(../img/cslogobc.png);
-  background-size: 100% 100%;
+  background-size: 100% 120%;
+  background-repeat: no-repeat;
   border-radius: 10px;
   filter: brightness(97.5%);
 }
