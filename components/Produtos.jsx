@@ -68,27 +68,27 @@ const Produtos = () => {
   }, [produtosF]);
 
   return (
-    <div className='produtos'>
+    <div className='produtos' style={{ marginTop: '50px' }}>
       <div className='position'>
-        <div className='filterProductTittle'>Navegue por Categoria</div>
-        <div className='subProductTittle'> Para cada tipo de ocasião uma jóia, apenas brilhe</div>
-        <div className='styleProductTittle'></div>
-        <div className='filterBox'>
+        <div className='filterProductTittle filterShow'>Navegue por Categoria</div>
+        <div className='subProductTittle filterShow'> Para cada tipo de ocasião uma jóia, apenas brilhe</div>
+        <div className='styleProductTittle filterShow'></div>
+        <div className='filterBox filterShow'>
 
           <div className='filterItem' onClick={() => { filtro('P') }}><Image className='filterText' onClick={scrollToTop} src={pulseira} alt="" /></div>
           <div className='filterItem' onClick={() => { filtro('A') }}><Image className='filterText' onClick={scrollToTop} src={aneis} alt="" /></div>
           <div className='filterItem' onClick={() => { filtro('B') }}><Image className='filterText' onClick={scrollToTop} src={brinco} alt="" /></div>
           <div className='filterItem' onClick={() => { filtro('C') }}><Image className='filterText' onClick={scrollToTop} id='colares' src={colares} alt="" /></div>
         </div>
-        <div className='itemNameBox'>
+        <div className='itemNameBox filterShow'>
           <div className='itemName' onClick={() => { filtro('A') }}><p className='filterText' alt="" />Pulseiras</div>
           <div className='itemName' onClick={() => { filtro('C') }}><p className='filterText' alt="" />Anéis</div>
           <div className='itemName' onClick={() => { filtro('P') }}><p className='filterText' alt="" />Brincos</div>
           <div className='itemName' onClick={() => { filtro('B') }}><p className='filterText' alt="" />Colares</div>
         </div>
         <div className='filterProductTittle'>Nossos Produtos</div>
-        <div className='subProductTittle'> Para cada tipo de ocasião uma jóia, apenas brilhe</div>
-        <div className='styleProductTittle'></div>
+        <div className='subProductTittle filterShow '> Para cada tipo de ocasião uma jóia, apenas brilhe</div>
+        <div className='styleProductTittle filterShow'></div>
 
         {(() => {
           if (typeof produtosF !== 'undefined') {
@@ -99,7 +99,7 @@ const Produtos = () => {
                   <div key={'1'} className='produtosBox' onClick={() => sendProdutos(name, imageurl, price)}>
 
                     <img className='produtoImg' src={imageurl} width={500} height={500} />
-                    <div className='infoHolder'>
+                    <div className='infoHolder' style={{ marginLeft: '0px' }}>
                       <p className='text'> {name} </p>
                       <p className='text'>R$ {price} </p>
                     </div>
@@ -111,7 +111,7 @@ const Produtos = () => {
                   <div key={'1'} className='produtosBox' onClick={() => sendProdutos(name, imageurl, price)}>
 
                     <img className='produtoImg' src={imageurl} width={500} height={500} />
-                    <div className='infoHolder'>
+                    <div className='infoHolder' style={{ marginLeft: '0px' }} >
                       <p className='text'> {name} </p>
                       <p className='text'>R$ {price} </p>
                     </div>
@@ -126,12 +126,12 @@ const Produtos = () => {
             )
           }
         })()}
-     
-       
+
+
       </div>
 
     </div>
-    
+
   )
 }
 
