@@ -1515,7 +1515,7 @@ h6 {
   }
 
   .iconsShow {
-    display: none;
+    display: none !important;
   }
 
   .devByBox {
